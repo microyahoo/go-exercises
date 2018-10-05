@@ -1,7 +1,7 @@
 package main
 
 import "fmt"
-import "github.com/microyahoo/go-exercise/closure"
+import "github.com/microyahoo/go-exercises/closure"
 
 func main() {
 	fmt.Println("vim-go")

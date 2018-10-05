@@ -1,2 +1,2 @@
-# go-exercise
-go get github.com/microyahoo/go-exercise
+# go-exercises
+go get github.com/microyahoo/go-exercises
