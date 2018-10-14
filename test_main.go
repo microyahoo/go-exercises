@@ -5,12 +5,13 @@ import (
 	"bytes"
 	"fmt"
 	"io"
-	"log"
-	"net/http"
+	_ "log"
+	_ "net/http"
 	"os"
+	"time"
 
 	"github.com/microyahoo/go-exercises/closure"
-	"github.com/microyahoo/go-exercises/http/database"
+	_ "github.com/microyahoo/go-exercises/http/database"
 )
 
 func main() {
@@ -55,10 +56,47 @@ func main() {
 	w = r2.(io.Writer)
 	fmt.Printf("++==%T\n\n", w)
 
-	fmt.Println("-------begin to test http database-----")
-	db := database.Database{"shoes": 50, "socks": 5}
-	mux := http.NewServeMux()
-	mux.Handle("/list", http.HandlerFunc(db.List))
-	mux.HandleFunc("/price", db.Price)
-	log.Fatal(http.ListenAndServe("localhost:8080", mux))
+	fmt.Println("-------begin to test error-----")
+	_, err = os.Open("/no/such/file")
+	fmt.Println(err)
+	fmt.Printf("%#v\n", err)
+
+	fmt.Println("-------begin to test select-----")
+	for j := 0; j < 100; j++ {
+		ch := make(chan int, 2)
+		for i := 0; i < 10; i++ {
+			select {
+			case x := <-ch:
+				fmt.Println(x)
+			case ch <- i:
+			}
+		}
+		fmt.Println("-------------++++++++++++++-----------")
+	}
+
+	fmt.Println("-------begin to test time.NewTicker-----")
+	ticker := time.NewTicker(time.Second)
+	defer ticker.Stop()
+	done := make(chan bool)
+	go func() {
+		time.Sleep(10 * time.Second)
+		done <- true
+	}()
+	for {
+		select {
+		case <-done:
+			fmt.Println("Done!")
+			return
+		case t := <-ticker.C:
+			fmt.Println("Current time: ", t)
+		}
+	}
+
+	// fmt.Println("-------begin to test http database-----")
+	// db := database.Database{"shoes": 50, "socks": 5}
+	// mux := http.NewServeMux()
+	// mux.Handle("/list", http.HandlerFunc(db.List))
+	// mux.HandleFunc("/price", db.Price)
+	// log.Fatal(http.ListenAndServe("localhost:8080", mux))
+
 }
