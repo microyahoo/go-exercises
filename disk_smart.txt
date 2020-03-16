@@ -1,0 +1,10 @@
+smartctl 6.2 2017-02-27 r4394 [x86_64-linux-3.10.0-693.el7.x86_64] (local build)
+Copyright (C) 2002-13, Bruce Allen, Christian Franke, www.smartmontools.org
+
+Device Statistics (GP Log 0x04)
+Page Offset Size         Value  Description
+  7  =====  =                =  == Solid State Device Statistics (rev 1) ==
+  7  0x008  1                3  Percentage Used Endurance Indicator
+
+
+            

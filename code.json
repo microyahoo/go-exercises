@@ -1,0 +1,1212 @@
+{
+  "01-01-0001": {
+    "desc": "Common unspecified error",
+    "suggest": "无建议",
+    "zh_value": "通用未指定错误"
+  },
+  "01-01-0002": {
+    "desc": "Common json unmarshal error",
+    "suggest": "无建议",
+    "zh_value": "JSON 反序列号错误"
+  },
+  "01-01-0003": {
+    "desc": "Common json marshal error",
+    "suggest": "无建议",
+    "zh_value": "JSON 序列号错误"
+  },
+  "01-01-0004": {
+    "desc": "Common json parse error",
+    "suggest": "无建议",
+    "zh_value": "JSON 解析错误"
+  },
+  "01-01-0005": {
+    "desc": "Common not found",
+    "suggest": "无建议",
+    "zh_value": "资源不存在"
+  },
+  "01-01-0006": {
+    "desc": "Common str conversion error",
+    "suggest": "无建议",
+    "zh_value": "字符串转换错误"
+  },
+  "01-01-0007": {
+    "desc": "Common resource exist",
+    "suggest": "无建议",
+    "zh_value": "资源已经存在"
+  },
+  "01-01-0008": {
+    "desc": "Common timeout",
+    "suggest": "无建议",
+    "zh_value": "超时"
+  },
+  "01-01-0009": {
+    "desc": "Common invalid argument",
+    "suggest": "无建议",
+    "zh_value": "无效参数"
+  },
+  "02-01-0001": {
+    "desc": "Rbd common unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Rbd 命令未指定的错误"
+  },
+  "02-02-0001": {
+    "desc": "Rbd volume unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Rbd 卷未指定的错误"
+  },
+  "02-02-0002": {
+    "desc": "Rbd volume resource busy",
+    "suggest": "无建议",
+    "zh_value": "Rbd 卷资源忙碌"
+  },
+  "02-02-0003": {
+    "desc": "Rbd volume resource exist",
+    "suggest": "无建议",
+    "zh_value": "Rbd 卷资源存在"
+  },
+  "02-02-0004": {
+    "desc": "Rbd volume unknown parameter",
+    "suggest": "无建议",
+    "zh_value": "Rbd 卷未知参数"
+  },
+  "02-02-0005": {
+    "desc": "Rbd volume no entry",
+    "suggest": "无建议",
+    "zh_value": "Rbd 卷不存在"
+  },
+  "02-03-0001": {
+    "desc": "Rbd snapshot unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Rbd 快照未指定的错误"
+  },
+  "02-03-0002": {
+    "desc": "Rbd snapshot resource busy",
+    "suggest": "无建议",
+    "zh_value": "Rbd 快照资源忙碌"
+  },
+  "02-03-0003": {
+    "desc": "Rbd snapshot resource exist",
+    "suggest": "无建议",
+    "zh_value": "Rbd 快照资源已存在"
+  },
+  "02-03-0004": {
+    "desc": "Rbd snapshot unknown parameter",
+    "suggest": "无建议",
+    "zh_value": "Rbd 快照未知参数"
+  },
+  "02-03-0005": {
+    "desc": "Rbd snapshot no entry",
+    "suggest": "无建议",
+    "zh_value": "Rbd 快照不存在"
+  },
+  "02-04-0001": {
+    "desc": "Rbd volume migration unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Rbd 卷迁移未指定的错误"
+  },
+  "02-04-0002": {
+    "desc": "Rbd volume migration resource busy",
+    "suggest": "无建议",
+    "zh_value": "Rbd 卷迁移资源忙碌"
+  },
+  "02-04-0003": {
+    "desc": "Rbd volume migration resource exist",
+    "suggest": "无建议",
+    "zh_value": "Rbd 卷迁移资源已存在"
+  },
+  "02-04-0004": {
+    "desc": "Rbd volume migration unknown parameter",
+    "suggest": "无建议",
+    "zh_value": "Rbd 卷迁移任务参数未知"
+  },
+  "02-04-0005": {
+    "desc": "Rbd volume migration invalid argument",
+    "suggest": "无建议",
+    "zh_value": "Rbd 卷迁移任务参数无效"
+  },
+  "02-04-0006": {
+    "desc": "Rbd volume migration no entry",
+    "suggest": "无建议",
+    "zh_value": "Rbd 迁移卷不存在"
+  },
+  "02-05-0001": {
+    "desc": "Rbd replication unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Rbd 复制未指定错误"
+  },
+  "02-06-0001": {
+    "desc": "Rbd trash unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Rbd 回收站未指定错误"
+  },
+  "02-06-0002": {
+    "desc": "Rbd trash resource busy",
+    "suggest": "无建议",
+    "zh_value": "Rbd 回收站资源忙碌"
+  },
+  "02-06-0003": {
+    "desc": "Rbd trash resource exist",
+    "suggest": "无建议",
+    "zh_value": "Rbd 回收站资源已存在"
+  },
+  "02-06-0004": {
+    "desc": "Rbd trash invalid argument",
+    "suggest": "无建议",
+    "zh_value": "Rbd 回收站参数无效"
+  },
+  "02-06-0005": {
+    "desc": "Rbd trash no entry",
+    "suggest": "无建议",
+    "zh_value": "Rbd 回收站资源不存在"
+  },
+  "03-01-0001": {
+    "desc": "Ceph common unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Ceph 通用未指定错误"
+  },
+  "03-02-0001": {
+    "desc": "Ceph deploy unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Ceph 未指定的部署错误"
+  },
+  "03-03-0001": {
+    "desc": "Ceph pool unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Ceph pool 未指定错误"
+  },
+  "03-04-0001": {
+    "desc": "Ceph mon unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Ceph mon 未指定错误"
+  },
+  "03-04-0002": {
+    "desc": "Ceph mon disk eio",
+    "suggest": "无建议",
+    "zh_value": "Ceph mon 磁盘介质错误"
+  },
+  "03-04-0003": {
+    "desc": "Ceph mon nic down",
+    "suggest": "无建议",
+    "zh_value": "Ceph mon 网卡 down 或者网线被拔"
+  },
+  "03-04-0004": {
+    "desc": "Ceph mon disk full",
+    "suggest": "无建议",
+    "zh_value": "Ceph mon 磁盘满导致 mon 离线"
+  },
+  "03-04-0005": {
+    "desc": "Ceph mon election too many",
+    "suggest": "无建议",
+    "zh_value": "Ceph mon 一定时间内选举次数超过阀值导致 mon 主动 shutdown"
+  },
+  "03-04-0006": {
+    "desc": "Ceph mon program error",
+    "suggest": "无建议",
+    "zh_value": "Ceph mon 程序 bug 错误"
+  },
+  "03-04-0007": {
+    "desc": "Ceph mon timeout",
+    "suggest": "无建议",
+    "zh_value": "Ceph mon 超时导致 mon 被标记为 down"
+  },
+  "03-04-0008": {
+    "desc": "Ceph mon receive sigint",
+    "suggest": "一般是 ctrl+c 或者程序发送的，对于 ceph 后台 mon 进程来说，排除 ctrl+c，因为 mon 都是后台守护进程",
+    "zh_value": "收到 SIGINT 信号"
+  },
+  "03-04-0009": {
+    "desc": "Ceph mon receive sigill",
+    "suggest": "一般是不支持某些平台，比如 ARM 平台下可能不支持 intel 的某些指令集",
+    "zh_value": "非法的指令错误"
+  },
+  "03-04-000A": {
+    "desc": "Ceph mon receive sigabrt",
+    "suggest": "根据 ceph 问题定位看是否属于程序内部错误，或者线程超时导致的打印，最后会发送 ABRT 信号给自己，从而使得进程退出",
+    "zh_value": "程序内部 assert 最终是调用 abort 给进程发送该信号"
+  },
+  "03-04-000B": {
+    "desc": "Ceph mon receive sigbus",
+    "suggest": "一般属于操作系统级别的错误",
+    "zh_value": "总线错误"
+  },
+  "03-04-000C": {
+    "desc": "Ceph mon receive sigfpe",
+    "suggest": "出现了除数是0，或者浮点数溢出",
+    "zh_value": "浮点运算错误"
+  },
+  "03-04-000D": {
+    "desc": "Ceph mon receive sigusr1",
+    "suggest": "mon 不会出现",
+    "zh_value": "仅仅 osd 识别，osd 遇到 EIO 错误时，为了 gracefull 退出，给自己发送 sigusr1 的信号"
+  },
+  "03-04-000E": {
+    "desc": "Ceph mon receive sigsegv",
+    "suggest": "非法的内存访问，一般是程序内有资源竞争没加锁，或者内存访问越界导致修改了其他数据结构，从而导致程序访问时挂掉",
+    "zh_value": "试图访问未分配给自己的内存, 或试图往没有写权限的内存地址写数据"
+  },
+  "03-04-000F": {
+    "desc": "Ceph mon receive sigterm",
+    "suggest": "一般是手动 stop mon 导致的",
+    "zh_value": "进程被中断了"
+  },
+  "03-04-0010": {
+    "desc": "Ceph mon receive sigxcpu",
+    "suggest": "getrlimit / setrlimit 来读取当前 cpu 的限制值",
+    "zh_value": "超过CPU时间资源限制"
+  },
+  "03-04-0011": {
+    "desc": "Ceph mon receive sigxfsz",
+    "suggest": "查看当前系统中打开的文件 fd 数",
+    "zh_value": "当进程企图扩大文件以至于超过文件大小资源限制。"
+  },
+  "03-04-0012": {
+    "desc": "Ceph mon receive sigsys",
+    "suggest": "看系统调用是什么，是否有参数错误等",
+    "zh_value": "非法的系统调用"
+  },
+  "03-05-0001": {
+    "desc": "Ceph osd unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Ceph osd 未指定错误"
+  },
+  "03-05-0002": {
+    "desc": "Ceph osd disk eio",
+    "suggest": "请更换磁盘",
+    "zh_value": "磁盘介质错误"
+  },
+  "03-05-0003": {
+    "desc": "Ceph osd nic down",
+    "suggest": "请检查 OSD 节点网卡或网线状态",
+    "zh_value": "OSD 节点网卡 down 或网线被拔"
+  },
+  "03-05-0004": {
+    "desc": "Ceph osd disk slow",
+    "suggest": "界面检查磁盘的使用率",
+    "zh_value": "osd 内部心跳 io 60s 超时导致"
+  },
+  "03-05-0005": {
+    "desc": "Ceph osd markdown too many",
+    "suggest": "请检查 OSD 网络链路",
+    "zh_value": "Ceph osd 一段时间内被 markdown 次数超过设置阈值，但 osd 进程还在"
+  },
+  "03-05-0006": {
+    "desc": "Ceph osd thread timeout",
+    "suggest": "根据日志打印的进程内所有线程的堆栈，看是否有死锁等现象",
+    "zh_value": "osd 内部线程超过设置的自杀阈值，导致 osd crash"
+  },
+  "03-05-0007": {
+    "desc": "Ceph osd program error",
+    "suggest": "建议先根据 ceph 问题定位进行排除，如若还不确定则联系研发",
+    "zh_value": "OSD 程序异常导致 OSD 离线"
+  },
+  "03-05-0008": {
+    "desc": "Ceph osd wrong osdmap",
+    "suggest": "一般是程序问题，很少遇到，建议先联系研发",
+    "zh_value": "osd 在收到某个版本 osdmap 解析时，发现自己并不存在于这个版本中"
+  },
+  "03-05-0009": {
+    "desc": "Ceph osd net rebind fail",
+    "suggest": "可能是系统问题，先检查/var/log/messages，看是否有明显的系统资源不够等问题，如若没有则需要联系研发",
+    "zh_value": "rebind 系统调用失败"
+  },
+  "03-05-000A": {
+    "desc": "Ceph osd net heartbeat timeout",
+    "suggest": "请检查 OSD 网络链路或 OSD 节点 CPU",
+    "zh_value": "OSD 心跳超时导致 OSD 离线"
+  },
+  "03-05-000B": {
+    "desc": "Ceph osd domain failure",
+    "suggest": "检查网络，看是否出现分区的情况",
+    "zh_value": "出现了故障域级别的网络故障，mon 仲裁，将某个故障域内的 osd 全部 down 掉，避免集群震荡"
+  },
+  "03-05-000C": {
+    "desc": "Ceph osd mon beacon timeout",
+    "suggest": "1）osd 进程在使用 gcore $pid > osd.core 2）查看是否有线程出现明显的死锁的现象 3）如果没有进程，需要联系研发，一般这种情况很少出现",
+    "zh_value": "osd 在 900s 内未向 mon 发送 beacon 消息，一般场景是通过 osd 之间的心跳来检查 osd 是否存活，对 osd 没有 peer 的场景需要通过 osd 和 mon 之间的 beacon 来确认 osd 的存活状态"
+  },
+  "03-05-000D": {
+    "desc": "Ceph osd mon store no entry",
+    "suggest": "可能是数据库损坏参考：http://wiki.xsky.com/pages/viewpage.action?pageId=33181158 处理",
+    "zh_value": "在 mon 的本地数据库读不到退出码记录"
+  },
+  "03-05-000E": {
+    "desc": "Ceph osd decode from buffer error",
+    "suggest": "无建议",
+    "zh_value": "Ceph osd 从 monstore 读取的退出码 decode 失败"
+  },
+  "03-05-000F": {
+    "desc": "Ceph osd connect refused",
+    "suggest": "建议先根据 ceph 问题定位进行排除，如若还不确定则联系研发",
+    "zh_value": "kill -9 或者 oom 被系统杀掉或者程序 bug"
+  },
+  "03-05-0010": {
+    "desc": "Ceph osd db write fail",
+    "suggest": "可能是数据库损坏参考：http://wiki.xsky.com/pages/viewpage.action?pageId=33181158 处理",
+    "zh_value": "写 rocksdb 失败"
+  },
+  "03-05-0011": {
+    "desc": "Ceph osd receive sigint",
+    "suggest": "一般是 ctrl+c 或者程序发送的，对于 ceph 后台 osd，mon 进程来说，排除 ctrl+c，因为 osd，mon 都是后台守护进程",
+    "zh_value": "收到 SIGINT 信号"
+  },
+  "03-05-0012": {
+    "desc": "Ceph osd receive sigill",
+    "suggest": "一般是不支持某些平台，比如 ARM 平台下可能不支持 intel 的某些指令集",
+    "zh_value": "非法的指令错误"
+  },
+  "03-05-0013": {
+    "desc": "Ceph osd receive sigabrt",
+    "suggest": "根据 ceph 问题定位看是否属于程序内部错误，或者线程超时导致的打印，最后会发送 ABRT 信号给自己，从而使得进程退出",
+    "zh_value": "程序内部 assert 最终是调用 abort 给进程发送该信号"
+  },
+  "03-05-0014": {
+    "desc": "Ceph osd receive sigbus",
+    "suggest": "一般属于操作系统级别的错误",
+    "zh_value": "总线错误"
+  },
+  "03-05-0015": {
+    "desc": "Ceph osd receive sigfpe",
+    "suggest": "出现了除数是 0，或者浮点数溢出",
+    "zh_value": "浮点运算错误"
+  },
+  "03-05-0016": {
+    "desc": "Ceph osd receive sigusr1",
+    "suggest": "一般是磁盘错误，检查磁盘",
+    "zh_value": "仅仅 osd 识别，osd 遇到 EIO 错误时，为了 gracefull 退出，给自己发送 sigusr1 的信号"
+  },
+  "03-05-0017": {
+    "desc": "Ceph osd receive sigsegv",
+    "suggest": "非法的内存访问，一般是程序内有资源竞争没加锁，或者内存访问越界导致修改了其他数据结构，从而导致程序访问时挂掉",
+    "zh_value": "试图访问未分配给自己的内存, 或试图往没有写权限的内存地址写数据"
+  },
+  "03-05-0018": {
+    "desc": "Ceph osd receive sigterm",
+    "suggest": "一般是手动 stop osd 导致的",
+    "zh_value": "进程被中断了"
+  },
+  "03-05-0019": {
+    "desc": "Ceph osd receive sigxcpu",
+    "suggest": "getrlimit / setrlimit 来读取当前 cpu 的限制值",
+    "zh_value": "超过 CPU 时间资源限制"
+  },
+  "03-05-001A": {
+    "desc": "Ceph osd receive sigxfsz",
+    "suggest": "查看当前系统中打开的文件 fd 数",
+    "zh_value": "当进程企图扩大文件以至于超过文件大小资源限制。"
+  },
+  "03-05-001B": {
+    "desc": "Ceph osd receive sigsys",
+    "suggest": "看系统调用是什么，是否有参数错误等",
+    "zh_value": "非法的系统调用"
+  },
+	"03-05-001C": {
+		"desc": "Ceph osd heavy slow io",
+		"suggest": "slow IO存在组合的情况，因此多个ERROR_HEAVY_SLOW_IO会存在组合的情况，判别时用错误码减去8000000，然后从 1 << 0 到 1 << 4对应slow IO错误码的范围，针对每个位进行判别识别组合情况, 其分别对应由于网络，本地磁盘，集群，系统资源和未知原因导致的slow IO, 也可以是多个原因的组合。",
+		"zh_value": "由于slow IO导致osd离线"
+	},
+    "03-05-001D": {
+        "desc": "Ceph osd disk subhealth",
+        "suggest": "请检查 OSD 所在磁盘的具体性能数据",
+        "zh_value": "磁盘处于亚健康状态"
+    },
+    "03-05-001E": {
+        "desc": "Ceph osd crc check",
+        "suggest": "请检查磁盘是否存在静默错误",
+        "zh_value": "检测到数据 CRC 不一致"
+    },
+  "03-06-0001": {
+    "desc": "Ceph crush unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Ceph 未指定的 crush 错误"
+  },
+  "03-07-0001": {
+    "desc": "Ceph rados unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Ceph rados 未指定的错误"
+  },
+  "03-08-0001": {
+    "desc": "Ceph pg unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Ceph pg 未指定的错误"
+  },
+  "05-01-0001": {
+    "desc": "Net common unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Network 通用的未指定的错误"
+  },
+  "05-01-0002": {
+    "desc": "Net common invalid ip addr",
+    "suggest": "无建议",
+    "zh_value": "无效的 IP 地址"
+  },
+  "05-02-0001": {
+    "desc": "Net interface unspecified error",
+    "suggest": "无建议",
+    "zh_value": "网卡通用的未指定的错误"
+  },
+  "05-02-0002": {
+    "desc": "Net interface open file failure",
+    "suggest": "无建议",
+    "zh_value": "打开文件失败"
+  },
+  "05-02-0003": {
+    "desc": "Net interface read file failure",
+    "suggest": "无建议",
+    "zh_value": "读取文件失败"
+  },
+  "05-02-0004": {
+    "desc": "Net interface not found",
+    "suggest": "无建议",
+    "zh_value": "网卡未找到"
+  },
+  "05-02-0005": {
+    "desc": "Net interface parse stats error",
+    "suggest": "无建议",
+    "zh_value": "解析网卡统计错误"
+  },
+  "05-03-0001": {
+    "desc": "Net fc unspecified error",
+    "suggest": "无建议",
+    "zh_value": "FC 未指定的错误"
+  },
+  "05-03-0002": {
+    "desc": "Net fc read file failure",
+    "suggest": "无建议",
+    "zh_value": "读取 FC 文件错误"
+  },
+  "05-04-0001": {
+    "desc": "Net bridge unspecified error",
+    "suggest": "无建议",
+    "zh_value": "网桥未指定的错误"
+  },
+  "05-04-0002": {
+    "desc": "Net bridge read file failure",
+    "suggest": "无建议",
+    "zh_value": "读取网桥文件错误"
+  },
+  "05-05-0001": {
+        "desc": "Net perf unspecified error",
+        "suggest": "无建议",
+        "zh_value": "网络性能未指定的错误"
+    },
+    "05-05-0002": {
+        "desc": "Net perf subhealth",
+        "suggest": "请使用 ping/iperf 或者其他网络工具检查所在网络的具体性能数据",
+        "zh_value": "网络处于亚健康状态"
+    },
+  "06-01-0001": {
+    "desc": "Disk common unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Disk 通用未指定的错误"
+  },
+  "06-01-0002": {
+    "desc": "Disk common unsupported driver type",
+    "suggest": "无建议",
+    "zh_value": "Disk 通用的驱动类型不支持错误"
+  },
+  "06-02-0001": {
+    "desc": "Disk device unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Disk 设备未指定错误"
+  },
+  "06-02-0002": {
+    "desc": "Disk device offline",
+    "suggest": "检查或更换磁盘设备",
+    "zh_value": "Disk 设备离线"
+  },
+  "06-02-0003": {
+    "desc": "Cache disk device offline",
+    "suggest": "检查或更换磁盘设备",
+    "zh_value": "缓存盘设备离线"
+  },
+  "06-03-0001": {
+    "desc": "Disk smart unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Disk smart 未指定错误"
+  },
+  "06-04-0001": {
+    "desc": "Disk fs unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Disk fs 未指定错误"
+  },
+  "06-05-0001": {
+    "desc": "Disk raid unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Disk raid 未指定错误"
+  },
+  "06-05-0002": {
+    "desc": "Disk raid module not loaded",
+    "suggest": "无建议",
+    "zh_value": "Disk raid 模块未加载"
+  },
+  "06-05-0003": {
+    "desc": "Disk raid invalid tool",
+    "suggest": "无建议",
+    "zh_value": "Disk raid 工具无效"
+  },
+  "07-01-0001": {
+    "desc": "Keepalived common unspecified error",
+    "suggest": "无建议",
+    "zh_value": "keepalived 通用的未指定的错误"
+  },
+  "07-02-0001": {
+    "desc": "Keepalived config unspecified error",
+    "suggest": "无建议",
+    "zh_value": "keepalived 配置文件未指定的错误"
+  },
+  "09-01-0001": {
+    "desc": "Access path common unspecified error",
+    "suggest": "无建议",
+    "zh_value": "访问路径通用的未指定的错误"
+  },
+  "09-01-0002": {
+    "desc": "Access path common exception",
+    "suggest": "联系研发",
+    "zh_value": "反问路径异常"
+  },
+  "0E-01-0001": {
+    "desc": "Xdc common unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Xdc 通用未指定错误"
+  },
+  "0E-02-0001": {
+    "desc": "Xdc access path unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Xdc 访问路径未指定错误"
+  },
+  "0E-03-0001": {
+    "desc": "Xdc target unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Xdc 网关未指定错误"
+  },
+  "0E-04-0001": {
+    "desc": "Xdc chap unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Xdc CHAP 认证未指定错误"
+  },
+  "0E-05-0001": {
+    "desc": "Xdc lun unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Xdc LUN 未指定错误"
+  },
+  "0E-06-0001": {
+    "desc": "Xdc client unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Xdc 客户端未指定错误"
+  },
+  "12-01-0001": {
+    "desc": "Os common unspecified error",
+    "suggest": "无建议",
+    "zh_value": "系统通用未指定错误"
+  },
+  "12-02-0001": {
+    "desc": "Os file unspecified error",
+    "suggest": "无建议",
+    "zh_value": "系统文件未指定错误"
+  },
+  "12-02-0002": {
+    "desc": "Os file read io error",
+    "suggest": "无建议",
+    "zh_value": "系统文件读 IO 错误"
+  },
+  "12-02-0003": {
+    "desc": "Os file write io error",
+    "suggest": "无建议",
+    "zh_value": "系统文件写 IO 错误"
+  },
+  "12-02-0004": {
+    "desc": "Os file open error",
+    "suggest": "无建议",
+    "zh_value": "系统文件打开错误"
+  },
+  "12-03-0001": {
+    "desc": "Os process unspecified error",
+    "suggest": "无建议",
+    "zh_value": "系统进程未指定错误"
+  },
+  "12-04-0001": {
+    "desc": "Os service unspecified error",
+    "suggest": "无建议",
+    "zh_value": "系统服务未指定错误"
+  },
+  "13-01-0001": {
+    "desc": "Etcd common unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Etcd 通用未指定错误"
+  },
+	"13-01-0002": {
+		"desc": "Etcd common lock ctx cancelled",
+        "suggest": "无建议",
+		"zh_value": "Etcd操作被取消"
+	},
+	"13-01-0003": {
+		"desc": "Etcd common set key failed",
+        "suggest": "请检查环境",
+		"zh_value": "设置Etcd键失败"
+	},
+  "13-02-0001": {
+    "desc": "Etcd installation unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Etcd 安装未指定错误"
+  },
+  "15-01-0001": {
+    "desc": "Http common unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Http 通用未指定错误"
+  },
+  "15-01-0002": {
+    "desc": "Http common invalid credential",
+    "suggest": "无建议",
+    "zh_value": "Http 不合法凭证"
+  },
+  "15-01-0003": {
+    "desc": "Http common request error",
+    "suggest": "无建议",
+    "zh_value": "Http 通用请求错误"
+  },
+  "15-01-0004": {
+    "desc": "Http common parse url error",
+    "suggest": "无建议",
+    "zh_value": "Http Url 解析错误"
+  },
+  "15-01-0005": {
+    "desc": "Http common read resp body error",
+    "suggest": "无建议",
+    "zh_value": "Http 读取响应错误"
+  },
+  "16-01-0001": {
+    "desc": "Rpc common unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Rpc 通用未指定错误"
+  },
+  "16-01-0002": {
+    "desc": "Rpc common host down",
+    "suggest": "无建议",
+    "zh_value": "Rpc 服务器宕机"
+  },
+  "16-01-0003": {
+    "desc": "Rpc common connection failed",
+    "suggest": "无建议",
+    "zh_value": "Rpc 连接失败"
+  },
+  "18-01-0001": {
+    "desc": "Task common unspecified error",
+    "suggest": "无建议",
+    "zh_value": "Task 未指定错误"
+  },
+  "18-01-0002": {
+    "desc": "Task common xdc exception",
+    "suggest": "无建议",
+    "zh_value": "Xdc 异常"
+  },
+  "18-01-0003": {
+    "desc": "Task common dead",
+    "suggest": "无建议",
+    "zh_value": "Task 任务挂了"
+  },
+  "18-02-0001": {
+    "desc": "Task volume unspecified error",
+    "suggest": "无建议",
+    "zh_value": "卷任务未指定错误"
+  },
+  "18-02-0002": {
+    "desc": "Task volume invalid migration state",
+    "suggest": "无建议",
+    "zh_value": "卷任务不合法迁移状态"
+  },
+  "18-02-0003": {
+    "desc": "Task volume migration error",
+    "suggest": "无建议",
+    "zh_value": "卷迁移任务错误"
+  },
+  "18-02-0004": {
+    "desc": "Task volume status invalid",
+    "suggest": "无建议",
+    "zh_value": "卷状态不匹配"
+  },
+  "18-02-0005": {
+    "desc": "Task volume migration status invalid",
+    "suggest": "无建议",
+    "zh_value": "卷迁移任务状态不匹配"
+  },
+  "18-02-0006": {
+    "desc": "Task volume trash resource status invalid",
+    "suggest": "无建议",
+    "zh_value": "卷回收站资源状态不匹配"
+  },
+  "18-02-0007": {
+    "desc": "Task volume replication status error",
+    "suggest": "无建议",
+    "zh_value": "卷复制任务状态错误"
+  },
+  "18-02-0008": {
+    "desc": "Task volume contains snapshots error",
+    "suggest": "无建议",
+    "zh_value": "卷快照导致删除失败"
+  },
+	"18-02-0009": {
+		"desc": "Task volume resource exist",
+        "suggest": "无建议",
+		"zh_value": "卷资源已存在"
+	},
+	"18-02-000A": {
+		"desc": "Task volume invalid argument",
+        "suggest": "无建议",
+		"zh_value": "无效的卷参数"
+	},
+  "18-03-0001": {
+    "desc": "Task snapshot unspecified error",
+    "suggest": "无建议",
+    "zh_value": "卷快照未指定错误"
+  },
+  "18-03-0002": {
+    "desc": "Task snapshot status invalid",
+    "suggest": "无建议",
+    "zh_value": "卷快照状态不匹配"
+  },
+	"18-03-0003": {
+		"desc": "Task snapshot resource exist",
+        "suggest": "无建议",
+		"zh_value": "快照资源已存在"
+	},
+	"18-04-0001": {
+		"desc": "Task pool unspecified error",
+        "suggest": "无建议",
+		"zh_value": "未指定的错误"
+	},
+	"18-04-0002": {
+		"desc": "Task pool status invalid",
+        "suggest": "无建议",
+		"zh_value": "pool状态不匹配"
+	},
+	"18-04-0003": {
+		"desc": "Task pool pg state not active clean",
+        "suggest": "无建议",
+		"zh_value": "pg状态不是active+clean"
+	},
+	"18-04-0004": {
+		"desc": "Task pool not found",
+        "suggest": "无建议",
+		"zh_value": "pool不存在"
+	},
+	"18-04-0005": {
+		"desc": "Task pool placement node occupying",
+        "suggest": "无建议",
+		"zh_value": "placement node被占用"
+	},
+	"18-04-0006": {
+		"desc": "Task pool pg not found",
+        "suggest": "无建议",
+		"zh_value": "pg不存在"
+	},
+	"18-04-0007": {
+		"desc": "Task pool check pg state not passed",
+        "suggest": "无建议",
+		"zh_value": "pg状态检查不通过"
+	},
+	"18-04-0008": {
+		"desc": "Task pool osd status invalid",
+        "suggest": "无建议",
+		"zh_value": "osd状态不匹配"
+	},
+  "19-01-0001": {
+    "desc": "Dp common unspecified error",
+    "suggest": "无建议",
+    "zh_value": "数据保护未指定错误"
+  },
+  "19-01-0002": {
+    "desc": "Dp common unknown command",
+    "suggest": "无建议",
+    "zh_value": "数据保护未知命令"
+  },
+  "19-01-0003": {
+    "desc": "Dp common invalid gateway numbers",
+    "suggest": "查看保护网关设置是否正确",
+    "zh_value": "数据保护保护网关数量错误"
+  },
+  "19-02-0001": {
+    "desc": "Dp s3 config not found",
+    "suggest": "设置S3",
+    "zh_value": "数据保护S3未发现设置"
+},
+  "19-02-0002": {
+    "desc": "Dp s3 not support platform",
+    "suggest": "检查S3设置",
+    "zh_value": "数据保护S3不支持的平台"
+},
+  "19-02-0003": {
+    "desc": "Dp s3 invalid root",
+    "suggest": "检查S3路径设置",
+    "zh_value": "数据保护S3无效的根目录"
+},
+  "19-02-0004": {
+    "desc": "Dp s3 path not exist",
+    "suggest": "检查S3路径设置",
+    "zh_value": "数据保护S3指定路径不存在"
+},
+  "19-02-0005": {
+    "desc": "Dp s3 path not dir",
+    "suggest": "检查S3路径设置",
+    "zh_value": "数据保护S3指定路径不是目录"
+},
+  "19-02-0006": {
+    "desc": "Dp s3 invalid list objects version",
+    "suggest": "检查平台list版本是否兼容",
+    "zh_value": "数据保护S3无效的List版本"
+},
+  "19-03-0001": {
+    "desc": "Dp scheduler unknown type",
+    "suggest": "无建议",
+    "zh_value": "数据保护调度器不支持的数据保护任务类型"
+},
+  "19-03-0002": {
+    "desc": "Dp scheduler empty queue",
+    "suggest": "无建议",
+    "zh_value": "数据保护调度器为空"
+},
+  "19-03-0003": {
+    "desc": "Dp scheduler no queue",
+    "suggest": "无建议",
+    "zh_value": "数据保护调度器未创建队列"
+},
+  "19-04-0001": {
+    "desc": "Dp path invalid file name",
+    "suggest": "检查备份文件名是否正确",
+    "zh_value": "数据保护路径无效的文件名"
+},
+  "19-04-0002": {
+    "desc": "Dp path invalid timestamp",
+    "suggest": "检查备份文件名是否正确",
+    "zh_value": "数据保护路径无效的时间戳"
+},
+  "19-05-0001": {
+    "desc": "Dp block snapshot volume invalid status",
+    "suggest": "检查卷状态是否正常",
+    "zh_value": "数据保护块定时快照无效的卷状态"
+},
+  "19-05-0002": {
+    "desc": "Dp block snapshot volume invalid action status",
+    "suggest": "检查是否有冲突操作",
+    "zh_value": "数据保护块定时快照无效的卷操作状态"
+},
+  "19-05-0003": {
+    "desc": "Dp block snapshot interrupt building",
+    "suggest": "恢复中断任务时会标记创建中的任务为失败",
+    "zh_value": "数据保护块定时快照创建中断"
+},
+  "19-05-0004": {
+    "desc": "Dp block snapshot previous running",
+    "suggest": "增大任务执行间隔或者检查是否有任务阻塞",
+    "zh_value": "数据保护块定时快照先前任务正在运行"
+},
+  "19-05-0005": {
+    "desc": "Dp block snapshot blocking",
+    "suggest": "需检查log查看原因",
+    "zh_value": "数据保护块定时快照阻塞"
+},
+  "19-06-0001": {
+    "desc": "Dp block backup upload len mismatch",
+    "suggest": "无建议",
+    "zh_value": "数据保护块快照备份上传长度不一致"
+},
+  "19-06-0002": {
+    "desc": "Dp block backup job volume invalid status",
+    "suggest": "检查卷状态是否正常",
+    "zh_value": "数据保护块快照备份无效的卷状态"
+},
+  "19-06-0003": {
+    "desc": "Dp block backup job volume invalid action status",
+    "suggest": "检查是否有冲突操作",
+    "zh_value": "数据保护块快照备份无效的卷操作状态"
+},
+  "19-06-0004": {
+    "desc": "Dp block backup job mapping invalid status",
+    "suggest": "无建议",
+    "zh_value": "数据保护块快照备份无效的mapping状态"
+},
+  "19-06-0005": {
+    "desc": "Dp block backup job snapshot cloned",
+    "suggest": "快照复制任务创建的快照不允许创建克隆卷",
+    "zh_value": "数据保护块快照备份快照正在被克隆卷使用"
+},
+  "19-06-0006": {
+    "desc": "Dp block backup job snapshot invalid status",
+    "suggest": "检查快照状态",
+    "zh_value": "数据保护块快照备份无效的快照状态"
+},
+  "19-06-0007": {
+    "desc": "Dp block backup job snapshot invalid action status",
+    "suggest": "检查是否有冲突操作",
+    "zh_value": "数据保护块快照备份无效的快照操作状态"
+},
+  "19-06-0008": {
+    "desc": "Dp block backup job chain name mismatch",
+    "suggest": "检查S3集群的元数据是否有更改",
+    "zh_value": "数据保护块快照备份备份链不一致"
+},
+  "19-06-0009": {
+    "desc": "Dp block backup job chain name conflict",
+    "suggest": "对于每个卷，只能有一个策略向同一个备份平台的同一个桶中备份",
+    "zh_value": "数据保护块快照备份备份链冲突"
+},
+  "19-06-000A": {
+    "desc": "Dp block backup job snapshot deleted",
+    "suggest": "恢复中断任务时发现快照已被删除",
+    "zh_value": "数据保护块快照备份快照已删除"
+},
+  "19-06-000B": {
+    "desc": "Dp block backup job cluster mismatch",
+    "suggest": "检查备份平台集群元数据是否有过变更",
+    "zh_value": "数据保护块快照备份集群不一致"
+},
+  "19-06-000C": {
+    "desc": "Dp block backup job backup file not found",
+    "suggest": "检查备份平台的文件是否已经被删除",
+    "zh_value": "数据保护块快照备份备份文件未发现"
+},
+  "19-06-000D": {
+    "desc": "Dp block backup policy not found in cache",
+    "suggest": "检查块快照备份策略",
+    "zh_value": "数据保护块快照备份策略未发现"
+},
+  "19-06-000E": {
+    "desc": "Dp block backup mapping not found in cache",
+    "suggest": "检查卷是否开启块快照复制策略",
+    "zh_value": "数据保护块快照备份mapping未发现"
+},
+  "19-06-000F": {
+    "desc": "Dp block backup job is running",
+    "suggest": "无建议",
+    "zh_value": "数据保护块快照备份已有运行中的任务"
+},
+  "19-06-0010": {
+    "desc": "Dp block backup interrupt not running",
+    "suggest": "恢复中断任务时会终止非运行中的任务",
+    "zh_value": "数据保护块快照备份终止非运行中任务"
+},
+  "19-06-0011": {
+    "desc": "Dp block backup interrupt timeout",
+    "suggest": "恢复中断任务时会终止超时的任务",
+    "zh_value": "数据保护块快照备份终止超时任务"
+},
+  "19-06-0012": {
+    "desc": "Dp block backup interrupt add queue",
+    "suggest": "无建议",
+    "zh_value": "数据保护块快照备份恢复终止任务添加到队列失败"
+},
+  "19-06-0013": {
+    "desc": "Dp block backup previous running",
+    "suggest": "增大任务执行间隔或者检查是否有任务阻塞",
+    "zh_value": "数据保护块快照备份先前任务正在运行"
+},
+  "19-06-0014": {
+    "desc": "Dp block backup removing",
+    "suggest": "无建议",
+    "zh_value": "数据保护块快照备份策略关闭中"
+},
+  "19-06-0015": {
+    "desc": "Dp block backup conflict",
+    "suggest": "无建议",
+    "zh_value": "数据保护块快照备份备份链冲突"
+},
+  "19-06-0016": {
+    "desc": "Dp block backup blocking",
+    "suggest": "需检查log查看原因",
+    "zh_value": "数据保护块快照备份阻塞"
+},
+  "19-06-0017": {
+    "desc": "Dp block backup cancelled",
+    "suggest": "无建议",
+    "zh_value": "数据保护块快照备份被取消"
+},
+  "19-07-0001": {
+    "desc": "Dp block recovery read segment len failed",
+    "suggest": "检查备份数据是否正常",
+    "zh_value": "数据保护块快照恢复读取分段长度失败"
+},
+  "19-07-0002": {
+    "desc": "Dp block recovery unexpect segment num",
+    "suggest": "检查备份数据是否正常",
+    "zh_value": "数据保护块快照恢复错误的分段长度"
+},
+  "19-07-0003": {
+    "desc": "Dp block recovery file not found",
+    "suggest": "检查备份数据是否正常",
+    "zh_value": "数据保护块快照恢复文件未发现"
+},
+  "19-07-0004": {
+    "desc": "Dp block recovery file num mismatch",
+    "suggest": "检查备份数据是否正常",
+    "zh_value": "数据保护块快照恢复文件数量不一致"
+},
+  "19-07-0005": {
+    "desc": "Dp block recovery metadata file not found",
+    "suggest": "检查备份数据是否正常",
+    "zh_value": "数据保护块快照恢复元数据未发现"
+},
+  "19-07-0006": {
+    "desc": "Dp block recovery volume snapshot exist",
+    "suggest": "无建议",
+    "zh_value": "数据保护块快照恢复卷快照已存在"
+},
+  "19-07-0007": {
+    "desc": "Dp block recovery volume snapshot num mismatch",
+    "suggest": "检查备份数据是否正常",
+    "zh_value": "数据保护块快照恢复快照数量不一致"
+},
+  "19-07-0008": {
+    "desc": "Dp block recovery volume snapshot mismatch",
+    "suggest": "检查备份数据是否正常",
+    "zh_value": "数据保护块快照恢复快照名称与元数据中不一致"
+},
+  "19-07-0009": {
+    "desc": "Dp block recovery snapshot mismatch",
+    "suggest": "检查备份数据是否正常",
+    "zh_value": "数据保护块快照恢复上一个快照名称不一致"
+},
+  "19-07-000A": {
+    "desc": "Dp block recovery segment num out of range",
+    "suggest": "检查备份数据是否正常",
+    "zh_value": "数据保护块快照恢复分段长度超过限制"
+},
+  "19-07-000B": {
+    "desc": "Dp block recovery backup not available",
+    "suggest": "检查备份数据是否正常",
+    "zh_value": "数据保护块快照恢复备份已删除"
+},
+  "19-07-000C": {
+    "desc": "Dp block recovery bitmap broken",
+    "suggest": "无建议",
+    "zh_value": "数据保护块快照恢复bimap损坏"
+},
+  "19-07-000D": {
+    "desc": "Dp block recovery interrupt timeout",
+    "suggest": "恢复中断任务时会终止超时的任务",
+    "zh_value": "数据保护块快照恢复终止超时任务"
+},
+  "19-07-000E": {
+    "desc": "Dp block recovery interrupt not running",
+    "suggest": "恢复中断任务时会终止非运行中的任务",
+    "zh_value": "数据保护块快照恢复终止非运行中任务"
+},
+  "19-07-000F": {
+    "desc": "Dp block recovery blocking",
+    "suggest": "需检查log查看原因",
+    "zh_value": "数据保护块快照恢复阻塞"
+},
+  "19-08-0001": {
+    "desc": "Dp fs snapshot volume invalid status",
+    "suggest": "无建议",
+    "zh_value": "数据保护文件定时快照无效的策略状态"
+},
+  "19-08-0002": {
+    "desc": "Dp fs snapshot folder invalid status",
+    "suggest": "检查文件系统状态",
+    "zh_value": "数据保护文件定时快照无效的文件系统状态"
+},
+  "19-08-0003": {
+    "desc": "Dp fs snapshot folder invalid action status",
+    "suggest": "检查是否有冲突操作",
+    "zh_value": "数据保护文件定时快照无效的文件系统状态"
+},
+  "19-08-0004": {
+    "desc": "Dp fs snapshot policy nil",
+    "suggest": "无建议",
+    "zh_value": "数据保护文件定时快照策略为空"
+},
+  "19-08-0005": {
+    "desc": "Dp fs snapshot policy mismatch",
+    "suggest": "无建议",
+    "zh_value": "数据保护文件定时快照策略不一致"
+},
+  "19-08-0006": {
+    "desc": "Dp fs snapshot deleting err",
+    "suggest": "无建议",
+    "zh_value": "数据保护文件定时快照删除错误"
+},
+  "19-08-0007": {
+    "desc": "Dp fs snapshot blocking",
+    "suggest": "无建议",
+    "zh_value": "数据保护文件定时快照阻塞"
+},
+  "19-09-0001": {
+    "desc": "Dp utils hash magic mismatch",
+    "suggest": "检查备份数据是否正常",
+    "zh_value": "数据保护hash magic number不一致"
+},
+  "19-09-0002": {
+    "desc": "Dp utils hash sum mismatch",
+    "suggest": "检查备份数据是否正常",
+    "zh_value": "数据保护hash不一致"
+},
+  "19-09-0003": {
+    "desc": "Dp utils hash invalid version",
+    "suggest": "检查备份数据是否正常",
+    "zh_value": "数据保护hash无效的版本"
+},
+  "19-09-0004": {
+    "desc": "Dp utils hash invalid algorithm",
+    "suggest": "检查备份数据是否正常",
+    "zh_value": "数据保护hash无效的算法"
+},
+  "19-09-0005": {
+    "desc": "Dp utils compress invalid magic",
+    "suggest": "检查备份数据是否正常",
+    "zh_value": "数据保护压缩无效的magic number"
+},
+  "19-09-0006": {
+    "desc": "Dp utils compress invalid version",
+    "suggest": "检查备份数据是否正常",
+    "zh_value": "数据保护压缩无效的版本"
+},
+  "19-09-0007": {
+    "desc": "Dp utils compress invalid algorithm",
+    "suggest": "检查备份数据是否正常",
+    "zh_value": "数据保护压缩无效的算法"
+},
+  "19-09-0008": {
+    "desc": "Dp utils crypto magic mismatch",
+    "suggest": "检查备份数据是否正常",
+    "zh_value": "数据保护加密migic number 不一致"
+},
+  "19-09-0009": {
+    "desc": "Dp utils crypto key mismatch",
+    "suggest": "检查密钥是否正确",
+    "zh_value": "数据保护加密密钥不一致"
+},
+  "19-09-000A": {
+    "desc": "Dp utils crypto invalid hmac",
+    "suggest": "检查备份数据是否正常",
+    "zh_value": "数据保护加密无效的hmac"
+},
+  "19-09-000B": {
+    "desc": "Dp utils crypto invalid version",
+    "suggest": "检查备份数据是否正常",
+    "zh_value": "数据保护加密无效的版本"
+},
+  "19-09-000C": {
+    "desc": "Dp utils crypto invalid block algorithm",
+    "suggest": "检查备份数据是否正常",
+    "zh_value": "数据保护加密无效的块算法"
+},
+  "19-09-000D": {
+    "desc": "Dp utils crypto invalid hmac algorithm",
+    "suggest": "检查备份数据是否正常",
+    "zh_value": "数据保护加密无效的hmac算法"
+},
+  "19-09-000E": {
+    "desc": "Dp utils crypto init err",
+    "suggest": "无建议",
+    "zh_value": "数据保护加密初始化错误"
+},
+  "19-09-000F": {
+    "desc": "Dp utils crypto invalid magic",
+    "suggest": "检查备份数据是否正常",
+    "zh_value": "数据保护加密无效的magic number"
+},
+  "19-09-0010": {
+    "desc": "Dp utils crypto invalid algorithm",
+    "suggest": "检查备份数据是否正常",
+    "zh_value": "数据保护加密无效的算法"
+}
+}

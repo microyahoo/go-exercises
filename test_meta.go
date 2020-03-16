@@ -28,7 +28,16 @@ func main() {
 	m1.copy(m2)
 	fmt.Println(m1)
 	fmt.Println(m2)
+
 	m2.magic = 18
 	fmt.Println(m1)
 	fmt.Println(m2)
+
+	var x = 12
+	var y = 24
+	fmt.Printf("%X\n", x^y)
+
+	var m = 2.035013634110407
+	var n = 4.23188836343827
+	fmt.Printf("%X\n", m^n)
 }

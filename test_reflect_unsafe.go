@@ -65,8 +65,21 @@ func main() {
 	*pb = 42
 	fmt.Println(x.b)
 	fmt.Println(0x7FFFFFF)
+	fmt.Println("-----------1------------")
+	fmt.Println(unsafe.Sizeof(struct {
+		a bool
+		b int16
+		c []int
+		d func()
+		e float64
+	}{}))
+	fmt.Println(unsafe.Sizeof(func() {}))
+	fmt.Println(unsafe.Sizeof([]int{}))
+	fmt.Println(unsafe.Sizeof([]byte{}))
+	// fmt.Println(unsafe.Sizeof(io.Writer))
+	// fmt.Println(unsafe.Sizeof(interface{}))
 
-	fmt.Println("------------------------")
+	fmt.Println("-----------2------------")
 	u := new(user)
 	fmt.Println(*u)
 
@@ -78,6 +91,14 @@ func main() {
 
 	fmt.Println(*u)
 	fmt.Println(0xc4200c3010)
+
+	fmt.Println("-----------3------------")
+	n := 3
+	b := make([]byte, n)
+	b = []byte("abc")
+	end := (*byte)(unsafe.Pointer(uintptr(unsafe.Pointer(&b[0])) + uintptr(n-1)))
+	fmt.Println(*end)
+	fmt.Println(b)
 }
 
 type user struct {

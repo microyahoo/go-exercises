@@ -1,0 +1,587 @@
+     0  *ast.File {
+     1  .  Package: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:1:1
+     2  .  Name: *ast.Ident {
+     3  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:1:9
+     4  .  .  Name: "inputs"
+     5  .  }
+     6  .  Decls: []ast.Decl (len = 8) {
+     7  .  .  0: *ast.GenDecl {
+     8  .  .  .  Doc: *ast.CommentGroup {
+     9  .  .  .  .  List: []*ast.Comment (len = 2) {
+    10  .  .  .  .  .  0: *ast.Comment {
+    11  .  .  .  .  .  .  Slash: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:3:1
+    12  .  .  .  .  .  .  Text: "// ErrCodeRbd defines the id of rbd module"
+    13  .  .  .  .  .  }
+    14  .  .  .  .  .  1: *ast.Comment {
+    15  .  .  .  .  .  .  Slash: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:4:1
+    16  .  .  .  .  .  .  Text: "// +ErrCode"
+    17  .  .  .  .  .  }
+    18  .  .  .  .  }
+    19  .  .  .  }
+    20  .  .  .  TokPos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:5:1
+    21  .  .  .  Tok: const
+    22  .  .  .  Lparen: -
+    23  .  .  .  Specs: []ast.Spec (len = 1) {
+    24  .  .  .  .  0: *ast.ValueSpec {
+    25  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+    26  .  .  .  .  .  .  0: *ast.Ident {
+    27  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:5:7
+    28  .  .  .  .  .  .  .  Name: "ErrCodeRbd"
+    29  .  .  .  .  .  .  .  Obj: *ast.Object {
+    30  .  .  .  .  .  .  .  .  Kind: const
+    31  .  .  .  .  .  .  .  .  Name: "ErrCodeRbd"
+    32  .  .  .  .  .  .  .  .  Decl: *(obj @ 24)
+    33  .  .  .  .  .  .  .  .  Data: 0
+    34  .  .  .  .  .  .  .  }
+    35  .  .  .  .  .  .  }
+    36  .  .  .  .  .  }
+    37  .  .  .  .  .  Values: []ast.Expr (len = 1) {
+    38  .  .  .  .  .  .  0: *ast.BasicLit {
+    39  .  .  .  .  .  .  .  ValuePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:5:20
+    40  .  .  .  .  .  .  .  Kind: INT
+    41  .  .  .  .  .  .  .  Value: "0x02"
+    42  .  .  .  .  .  .  }
+    43  .  .  .  .  .  }
+    44  .  .  .  .  }
+    45  .  .  .  }
+    46  .  .  .  Rparen: -
+    47  .  .  }
+    48  .  .  1: *ast.GenDecl {
+    49  .  .  .  Doc: *ast.CommentGroup {
+    50  .  .  .  .  List: []*ast.Comment (len = 2) {
+    51  .  .  .  .  .  0: *ast.Comment {
+    52  .  .  .  .  .  .  Slash: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:7:1
+    53  .  .  .  .  .  .  Text: "// the sub module of rbd"
+    54  .  .  .  .  .  }
+    55  .  .  .  .  .  1: *ast.Comment {
+    56  .  .  .  .  .  .  Slash: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:8:1
+    57  .  .  .  .  .  .  Text: "// +ErrCode=ARbd"
+    58  .  .  .  .  .  }
+    59  .  .  .  .  }
+    60  .  .  .  }
+    61  .  .  .  TokPos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:9:1
+    62  .  .  .  Tok: const
+    63  .  .  .  Lparen: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:9:7
+    64  .  .  .  Specs: []ast.Spec (len = 2) {
+    65  .  .  .  .  0: *ast.ValueSpec {
+    66  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+    67  .  .  .  .  .  .  0: *ast.Ident {
+    68  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:10:2
+    69  .  .  .  .  .  .  .  Name: "ErrCodeRbdCommon"
+    70  .  .  .  .  .  .  .  Obj: *ast.Object {
+    71  .  .  .  .  .  .  .  .  Kind: const
+    72  .  .  .  .  .  .  .  .  Name: "ErrCodeRbdCommon"
+    73  .  .  .  .  .  .  .  .  Decl: *(obj @ 65)
+    74  .  .  .  .  .  .  .  .  Data: 0
+    75  .  .  .  .  .  .  .  }
+    76  .  .  .  .  .  .  }
+    77  .  .  .  .  .  }
+    78  .  .  .  .  .  Values: []ast.Expr (len = 1) {
+    79  .  .  .  .  .  .  0: *ast.BinaryExpr {
+    80  .  .  .  .  .  .  .  X: *ast.Ident {
+    81  .  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:10:21
+    82  .  .  .  .  .  .  .  .  Name: "iota"
+    83  .  .  .  .  .  .  .  }
+    84  .  .  .  .  .  .  .  OpPos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:10:26
+    85  .  .  .  .  .  .  .  Op: +
+    86  .  .  .  .  .  .  .  Y: *ast.BasicLit {
+    87  .  .  .  .  .  .  .  .  ValuePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:10:28
+    88  .  .  .  .  .  .  .  .  Kind: INT
+    89  .  .  .  .  .  .  .  .  Value: "1"
+    90  .  .  .  .  .  .  .  }
+    91  .  .  .  .  .  .  }
+    92  .  .  .  .  .  }
+    93  .  .  .  .  }
+    94  .  .  .  .  1: *ast.ValueSpec {
+    95  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+    96  .  .  .  .  .  .  0: *ast.Ident {
+    97  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:11:2
+    98  .  .  .  .  .  .  .  Name: "ErrCodeRbdVolume"
+    99  .  .  .  .  .  .  .  Obj: *ast.Object {
+   100  .  .  .  .  .  .  .  .  Kind: const
+   101  .  .  .  .  .  .  .  .  Name: "ErrCodeRbdVolume"
+   102  .  .  .  .  .  .  .  .  Decl: *(obj @ 94)
+   103  .  .  .  .  .  .  .  .  Data: 1
+   104  .  .  .  .  .  .  .  }
+   105  .  .  .  .  .  .  }
+   106  .  .  .  .  .  }
+   107  .  .  .  .  }
+   108  .  .  .  }
+   109  .  .  .  Rparen: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:12:1
+   110  .  .  }
+   111  .  .  2: *ast.GenDecl {
+   112  .  .  .  Doc: *ast.CommentGroup {
+   113  .  .  .  .  List: []*ast.Comment (len = 2) {
+   114  .  .  .  .  .  0: *ast.Comment {
+   115  .  .  .  .  .  .  Slash: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:14:1
+   116  .  .  .  .  .  .  Text: "// list of rbd common error codes"
+   117  .  .  .  .  .  }
+   118  .  .  .  .  .  1: *ast.Comment {
+   119  .  .  .  .  .  .  Slash: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:15:1
+   120  .  .  .  .  .  .  Text: "// +ErrCode=ARbd,BCommon"
+   121  .  .  .  .  .  }
+   122  .  .  .  .  }
+   123  .  .  .  }
+   124  .  .  .  TokPos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:16:1
+   125  .  .  .  Tok: const
+   126  .  .  .  Lparen: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:16:7
+   127  .  .  .  Specs: []ast.Spec (len = 3) {
+   128  .  .  .  .  0: *ast.ValueSpec {
+   129  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   130  .  .  .  .  .  .  0: *ast.Ident {
+   131  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:17:2
+   132  .  .  .  .  .  .  .  Name: "ErrCodeRbdCommonBegin"
+   133  .  .  .  .  .  .  .  Obj: *ast.Object {
+   134  .  .  .  .  .  .  .  .  Kind: const
+   135  .  .  .  .  .  .  .  .  Name: "ErrCodeRbdCommonBegin"
+   136  .  .  .  .  .  .  .  .  Decl: *(obj @ 128)
+   137  .  .  .  .  .  .  .  .  Data: 0
+   138  .  .  .  .  .  .  .  }
+   139  .  .  .  .  .  .  }
+   140  .  .  .  .  .  }
+   141  .  .  .  .  .  Values: []ast.Expr (len = 1) {
+   142  .  .  .  .  .  .  0: *ast.Ident {
+   143  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:17:26
+   144  .  .  .  .  .  .  .  Name: "iota"
+   145  .  .  .  .  .  .  }
+   146  .  .  .  .  .  }
+   147  .  .  .  .  }
+   148  .  .  .  .  1: *ast.ValueSpec {
+   149  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   150  .  .  .  .  .  .  0: *ast.Ident {
+   151  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:18:2
+   152  .  .  .  .  .  .  .  Name: "ErrCodeRbdCommonUnspecifiedError"
+   153  .  .  .  .  .  .  .  Obj: *ast.Object {
+   154  .  .  .  .  .  .  .  .  Kind: const
+   155  .  .  .  .  .  .  .  .  Name: "ErrCodeRbdCommonUnspecifiedError"
+   156  .  .  .  .  .  .  .  .  Decl: *(obj @ 148)
+   157  .  .  .  .  .  .  .  .  Data: 1
+   158  .  .  .  .  .  .  .  }
+   159  .  .  .  .  .  .  }
+   160  .  .  .  .  .  }
+   161  .  .  .  .  }
+   162  .  .  .  .  2: *ast.ValueSpec {
+   163  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   164  .  .  .  .  .  .  0: *ast.Ident {
+   165  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:19:2
+   166  .  .  .  .  .  .  .  Name: "ErrCodeRbdCommonEnd"
+   167  .  .  .  .  .  .  .  Obj: *ast.Object {
+   168  .  .  .  .  .  .  .  .  Kind: const
+   169  .  .  .  .  .  .  .  .  Name: "ErrCodeRbdCommonEnd"
+   170  .  .  .  .  .  .  .  .  Decl: *(obj @ 162)
+   171  .  .  .  .  .  .  .  .  Data: 2
+   172  .  .  .  .  .  .  .  }
+   173  .  .  .  .  .  .  }
+   174  .  .  .  .  .  }
+   175  .  .  .  .  }
+   176  .  .  .  }
+   177  .  .  .  Rparen: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:20:1
+   178  .  .  }
+   179  .  .  3: *ast.GenDecl {
+   180  .  .  .  Doc: *ast.CommentGroup {
+   181  .  .  .  .  List: []*ast.Comment (len = 2) {
+   182  .  .  .  .  .  0: *ast.Comment {
+   183  .  .  .  .  .  .  Slash: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:22:1
+   184  .  .  .  .  .  .  Text: "// ErrCodeRbdCommonToMessage is map of common error code to their messages"
+   185  .  .  .  .  .  }
+   186  .  .  .  .  .  1: *ast.Comment {
+   187  .  .  .  .  .  .  Slash: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:23:1
+   188  .  .  .  .  .  .  Text: "// +ErrCode=ARbd,BCommon,ToMessage"
+   189  .  .  .  .  .  }
+   190  .  .  .  .  }
+   191  .  .  .  }
+   192  .  .  .  TokPos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:24:1
+   193  .  .  .  Tok: var
+   194  .  .  .  Lparen: -
+   195  .  .  .  Specs: []ast.Spec (len = 1) {
+   196  .  .  .  .  0: *ast.ValueSpec {
+   197  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   198  .  .  .  .  .  .  0: *ast.Ident {
+   199  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:24:5
+   200  .  .  .  .  .  .  .  Name: "ErrCodeRbdCommonToMessage"
+   201  .  .  .  .  .  .  .  Obj: *ast.Object {
+   202  .  .  .  .  .  .  .  .  Kind: var
+   203  .  .  .  .  .  .  .  .  Name: "ErrCodeRbdCommonToMessage"
+   204  .  .  .  .  .  .  .  .  Decl: *(obj @ 196)
+   205  .  .  .  .  .  .  .  .  Data: 0
+   206  .  .  .  .  .  .  .  }
+   207  .  .  .  .  .  .  }
+   208  .  .  .  .  .  }
+   209  .  .  .  .  .  Values: []ast.Expr (len = 1) {
+   210  .  .  .  .  .  .  0: *ast.CompositeLit {
+   211  .  .  .  .  .  .  .  Type: *ast.MapType {
+   212  .  .  .  .  .  .  .  .  Map: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:24:33
+   213  .  .  .  .  .  .  .  .  Key: *ast.Ident {
+   214  .  .  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:24:37
+   215  .  .  .  .  .  .  .  .  .  Name: "int"
+   216  .  .  .  .  .  .  .  .  }
+   217  .  .  .  .  .  .  .  .  Value: *ast.Ident {
+   218  .  .  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:24:41
+   219  .  .  .  .  .  .  .  .  .  Name: "string"
+   220  .  .  .  .  .  .  .  .  }
+   221  .  .  .  .  .  .  .  }
+   222  .  .  .  .  .  .  .  Lbrace: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:24:47
+   223  .  .  .  .  .  .  .  Elts: []ast.Expr (len = 1) {
+   224  .  .  .  .  .  .  .  .  0: *ast.KeyValueExpr {
+   225  .  .  .  .  .  .  .  .  .  Key: *ast.Ident {
+   226  .  .  .  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:25:2
+   227  .  .  .  .  .  .  .  .  .  .  Name: "ErrCodeRbdCommonUnspecifiedError"
+   228  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 153)
+   229  .  .  .  .  .  .  .  .  .  }
+   230  .  .  .  .  .  .  .  .  .  Colon: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:25:34
+   231  .  .  .  .  .  .  .  .  .  Value: *ast.BasicLit {
+   232  .  .  .  .  .  .  .  .  .  .  ValuePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:25:36
+   233  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+   234  .  .  .  .  .  .  .  .  .  .  Value: "\"The %s operation failed due to unspecified error\""
+   235  .  .  .  .  .  .  .  .  .  }
+   236  .  .  .  .  .  .  .  .  }
+   237  .  .  .  .  .  .  .  }
+   238  .  .  .  .  .  .  .  Rbrace: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:26:1
+   239  .  .  .  .  .  .  .  Incomplete: false
+   240  .  .  .  .  .  .  }
+   241  .  .  .  .  .  }
+   242  .  .  .  .  }
+   243  .  .  .  }
+   244  .  .  .  Rparen: -
+   245  .  .  }
+   246  .  .  4: *ast.GenDecl {
+   247  .  .  .  Doc: *ast.CommentGroup {
+   248  .  .  .  .  List: []*ast.Comment (len = 2) {
+   249  .  .  .  .  .  0: *ast.Comment {
+   250  .  .  .  .  .  .  Slash: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:28:1
+   251  .  .  .  .  .  .  Text: "// list of rbd volume error codes"
+   252  .  .  .  .  .  }
+   253  .  .  .  .  .  1: *ast.Comment {
+   254  .  .  .  .  .  .  Slash: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:29:1
+   255  .  .  .  .  .  .  Text: "// +ErrCode=ARbd,BVolume"
+   256  .  .  .  .  .  }
+   257  .  .  .  .  }
+   258  .  .  .  }
+   259  .  .  .  TokPos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:30:1
+   260  .  .  .  Tok: const
+   261  .  .  .  Lparen: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:30:7
+   262  .  .  .  Specs: []ast.Spec (len = 4) {
+   263  .  .  .  .  0: *ast.ValueSpec {
+   264  .  .  .  .  .  Doc: *ast.CommentGroup {
+   265  .  .  .  .  .  .  List: []*ast.Comment (len = 1) {
+   266  .  .  .  .  .  .  .  0: *ast.Comment {
+   267  .  .  .  .  .  .  .  .  Slash: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:31:2
+   268  .  .  .  .  .  .  .  .  Text: "// +ErrCode=ARbd,BVolume,hi"
+   269  .  .  .  .  .  .  .  }
+   270  .  .  .  .  .  .  }
+   271  .  .  .  .  .  }
+   272  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   273  .  .  .  .  .  .  0: *ast.Ident {
+   274  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:32:2
+   275  .  .  .  .  .  .  .  Name: "ErrCodeRbdVolumeBegin"
+   276  .  .  .  .  .  .  .  Obj: *ast.Object {
+   277  .  .  .  .  .  .  .  .  Kind: const
+   278  .  .  .  .  .  .  .  .  Name: "ErrCodeRbdVolumeBegin"
+   279  .  .  .  .  .  .  .  .  Decl: *(obj @ 263)
+   280  .  .  .  .  .  .  .  .  Data: 0
+   281  .  .  .  .  .  .  .  }
+   282  .  .  .  .  .  .  }
+   283  .  .  .  .  .  }
+   284  .  .  .  .  .  Values: []ast.Expr (len = 1) {
+   285  .  .  .  .  .  .  0: *ast.Ident {
+   286  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:32:26
+   287  .  .  .  .  .  .  .  Name: "iota"
+   288  .  .  .  .  .  .  }
+   289  .  .  .  .  .  }
+   290  .  .  .  .  }
+   291  .  .  .  .  1: *ast.ValueSpec {
+   292  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   293  .  .  .  .  .  .  0: *ast.Ident {
+   294  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:33:2
+   295  .  .  .  .  .  .  .  Name: "ErrCodeRbdVolumeUnknownParameter"
+   296  .  .  .  .  .  .  .  Obj: *ast.Object {
+   297  .  .  .  .  .  .  .  .  Kind: const
+   298  .  .  .  .  .  .  .  .  Name: "ErrCodeRbdVolumeUnknownParameter"
+   299  .  .  .  .  .  .  .  .  Decl: *(obj @ 291)
+   300  .  .  .  .  .  .  .  .  Data: 1
+   301  .  .  .  .  .  .  .  }
+   302  .  .  .  .  .  .  }
+   303  .  .  .  .  .  }
+   304  .  .  .  .  }
+   305  .  .  .  .  2: *ast.ValueSpec {
+   306  .  .  .  .  .  Doc: *ast.CommentGroup {
+   307  .  .  .  .  .  .  List: []*ast.Comment (len = 1) {
+   308  .  .  .  .  .  .  .  0: *ast.Comment {
+   309  .  .  .  .  .  .  .  .  Slash: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:34:2
+   310  .  .  .  .  .  .  .  .  Text: "// +ErrCode=ARbd,BVolume,hello"
+   311  .  .  .  .  .  .  .  }
+   312  .  .  .  .  .  .  }
+   313  .  .  .  .  .  }
+   314  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   315  .  .  .  .  .  .  0: *ast.Ident {
+   316  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:35:2
+   317  .  .  .  .  .  .  .  Name: "ErrCodeRbdVolumeNoEntry"
+   318  .  .  .  .  .  .  .  Obj: *ast.Object {
+   319  .  .  .  .  .  .  .  .  Kind: const
+   320  .  .  .  .  .  .  .  .  Name: "ErrCodeRbdVolumeNoEntry"
+   321  .  .  .  .  .  .  .  .  Decl: *(obj @ 305)
+   322  .  .  .  .  .  .  .  .  Data: 2
+   323  .  .  .  .  .  .  .  }
+   324  .  .  .  .  .  .  }
+   325  .  .  .  .  .  }
+   326  .  .  .  .  }
+   327  .  .  .  .  3: *ast.ValueSpec {
+   328  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   329  .  .  .  .  .  .  0: *ast.Ident {
+   330  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:36:2
+   331  .  .  .  .  .  .  .  Name: "ErrCodeRbdVolumeEnd"
+   332  .  .  .  .  .  .  .  Obj: *ast.Object {
+   333  .  .  .  .  .  .  .  .  Kind: const
+   334  .  .  .  .  .  .  .  .  Name: "ErrCodeRbdVolumeEnd"
+   335  .  .  .  .  .  .  .  .  Decl: *(obj @ 327)
+   336  .  .  .  .  .  .  .  .  Data: 3
+   337  .  .  .  .  .  .  .  }
+   338  .  .  .  .  .  .  }
+   339  .  .  .  .  .  }
+   340  .  .  .  .  }
+   341  .  .  .  }
+   342  .  .  .  Rparen: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:37:1
+   343  .  .  }
+   344  .  .  5: *ast.GenDecl {
+   345  .  .  .  Doc: *ast.CommentGroup {
+   346  .  .  .  .  List: []*ast.Comment (len = 1) {
+   347  .  .  .  .  .  0: *ast.Comment {
+   348  .  .  .  .  .  .  Slash: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:39:1
+   349  .  .  .  .  .  .  Text: "// ErrCodeRbdVolumeToMessage is map of volume error code to their messages"
+   350  .  .  .  .  .  }
+   351  .  .  .  .  }
+   352  .  .  .  }
+   353  .  .  .  TokPos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:40:1
+   354  .  .  .  Tok: var
+   355  .  .  .  Lparen: -
+   356  .  .  .  Specs: []ast.Spec (len = 1) {
+   357  .  .  .  .  0: *ast.ValueSpec {
+   358  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   359  .  .  .  .  .  .  0: *ast.Ident {
+   360  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:40:5
+   361  .  .  .  .  .  .  .  Name: "ErrCodeRbdVolumeToMessage"
+   362  .  .  .  .  .  .  .  Obj: *ast.Object {
+   363  .  .  .  .  .  .  .  .  Kind: var
+   364  .  .  .  .  .  .  .  .  Name: "ErrCodeRbdVolumeToMessage"
+   365  .  .  .  .  .  .  .  .  Decl: *(obj @ 357)
+   366  .  .  .  .  .  .  .  .  Data: 0
+   367  .  .  .  .  .  .  .  }
+   368  .  .  .  .  .  .  }
+   369  .  .  .  .  .  }
+   370  .  .  .  .  .  Values: []ast.Expr (len = 1) {
+   371  .  .  .  .  .  .  0: *ast.CompositeLit {
+   372  .  .  .  .  .  .  .  Type: *ast.MapType {
+   373  .  .  .  .  .  .  .  .  Map: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:40:33
+   374  .  .  .  .  .  .  .  .  Key: *ast.Ident {
+   375  .  .  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:40:37
+   376  .  .  .  .  .  .  .  .  .  Name: "int"
+   377  .  .  .  .  .  .  .  .  }
+   378  .  .  .  .  .  .  .  .  Value: *ast.Ident {
+   379  .  .  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:40:41
+   380  .  .  .  .  .  .  .  .  .  Name: "string"
+   381  .  .  .  .  .  .  .  .  }
+   382  .  .  .  .  .  .  .  }
+   383  .  .  .  .  .  .  .  Lbrace: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:40:47
+   384  .  .  .  .  .  .  .  Elts: []ast.Expr (len = 2) {
+   385  .  .  .  .  .  .  .  .  0: *ast.KeyValueExpr {
+   386  .  .  .  .  .  .  .  .  .  Key: *ast.Ident {
+   387  .  .  .  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:41:2
+   388  .  .  .  .  .  .  .  .  .  .  Name: "ErrCodeRbdVolumeUnknownParameter"
+   389  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 296)
+   390  .  .  .  .  .  .  .  .  .  }
+   391  .  .  .  .  .  .  .  .  .  Colon: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:41:34
+   392  .  .  .  .  .  .  .  .  .  Value: *ast.BasicLit {
+   393  .  .  .  .  .  .  .  .  .  .  ValuePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:41:36
+   394  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+   395  .  .  .  .  .  .  .  .  .  .  Value: "\"The %s operation failed due to unknown parameter\""
+   396  .  .  .  .  .  .  .  .  .  }
+   397  .  .  .  .  .  .  .  .  }
+   398  .  .  .  .  .  .  .  .  1: *ast.KeyValueExpr {
+   399  .  .  .  .  .  .  .  .  .  Key: *ast.Ident {
+   400  .  .  .  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:42:2
+   401  .  .  .  .  .  .  .  .  .  .  Name: "ErrCodeRbdVolumeNoEntry"
+   402  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 318)
+   403  .  .  .  .  .  .  .  .  .  }
+   404  .  .  .  .  .  .  .  .  .  Colon: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:42:25
+   405  .  .  .  .  .  .  .  .  .  Value: *ast.BasicLit {
+   406  .  .  .  .  .  .  .  .  .  .  ValuePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:42:36
+   407  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+   408  .  .  .  .  .  .  .  .  .  .  Value: "\"The %s operation failed due to no such directory entry\""
+   409  .  .  .  .  .  .  .  .  .  }
+   410  .  .  .  .  .  .  .  .  }
+   411  .  .  .  .  .  .  .  }
+   412  .  .  .  .  .  .  .  Rbrace: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:43:1
+   413  .  .  .  .  .  .  .  Incomplete: false
+   414  .  .  .  .  .  .  }
+   415  .  .  .  .  .  }
+   416  .  .  .  .  }
+   417  .  .  .  }
+   418  .  .  .  Rparen: -
+   419  .  .  }
+   420  .  .  6: *ast.GenDecl {
+   421  .  .  .  Doc: *ast.CommentGroup {
+   422  .  .  .  .  List: []*ast.Comment (len = 1) {
+   423  .  .  .  .  .  0: *ast.Comment {
+   424  .  .  .  .  .  .  Slash: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:45:1
+   425  .  .  .  .  .  .  Text: "// Only for test"
+   426  .  .  .  .  .  }
+   427  .  .  .  .  }
+   428  .  .  .  }
+   429  .  .  .  TokPos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:46:1
+   430  .  .  .  Tok: const
+   431  .  .  .  Lparen: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:46:7
+   432  .  .  .  Specs: []ast.Spec (len = 3) {
+   433  .  .  .  .  0: *ast.ValueSpec {
+   434  .  .  .  .  .  Doc: *ast.CommentGroup {
+   435  .  .  .  .  .  .  List: []*ast.Comment (len = 1) {
+   436  .  .  .  .  .  .  .  0: *ast.Comment {
+   437  .  .  .  .  .  .  .  .  Slash: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:47:2
+   438  .  .  .  .  .  .  .  .  Text: "// only for test A"
+   439  .  .  .  .  .  .  .  }
+   440  .  .  .  .  .  .  }
+   441  .  .  .  .  .  }
+   442  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   443  .  .  .  .  .  .  0: *ast.Ident {
+   444  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:48:2
+   445  .  .  .  .  .  .  .  Name: "TestA"
+   446  .  .  .  .  .  .  .  Obj: *ast.Object {
+   447  .  .  .  .  .  .  .  .  Kind: const
+   448  .  .  .  .  .  .  .  .  Name: "TestA"
+   449  .  .  .  .  .  .  .  .  Decl: *(obj @ 433)
+   450  .  .  .  .  .  .  .  .  Data: 0
+   451  .  .  .  .  .  .  .  }
+   452  .  .  .  .  .  .  }
+   453  .  .  .  .  .  }
+   454  .  .  .  .  .  Values: []ast.Expr (len = 1) {
+   455  .  .  .  .  .  .  0: *ast.Ident {
+   456  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:48:10
+   457  .  .  .  .  .  .  .  Name: "iota"
+   458  .  .  .  .  .  .  }
+   459  .  .  .  .  .  }
+   460  .  .  .  .  }
+   461  .  .  .  .  1: *ast.ValueSpec {
+   462  .  .  .  .  .  Doc: *ast.CommentGroup {
+   463  .  .  .  .  .  .  List: []*ast.Comment (len = 1) {
+   464  .  .  .  .  .  .  .  0: *ast.Comment {
+   465  .  .  .  .  .  .  .  .  Slash: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:49:2
+   466  .  .  .  .  .  .  .  .  Text: "// only for test B"
+   467  .  .  .  .  .  .  .  }
+   468  .  .  .  .  .  .  }
+   469  .  .  .  .  .  }
+   470  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   471  .  .  .  .  .  .  0: *ast.Ident {
+   472  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:50:2
+   473  .  .  .  .  .  .  .  Name: "TestB"
+   474  .  .  .  .  .  .  .  Obj: *ast.Object {
+   475  .  .  .  .  .  .  .  .  Kind: const
+   476  .  .  .  .  .  .  .  .  Name: "TestB"
+   477  .  .  .  .  .  .  .  .  Decl: *(obj @ 461)
+   478  .  .  .  .  .  .  .  .  Data: 1
+   479  .  .  .  .  .  .  .  }
+   480  .  .  .  .  .  .  }
+   481  .  .  .  .  .  }
+   482  .  .  .  .  }
+   483  .  .  .  .  2: *ast.ValueSpec {
+   484  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   485  .  .  .  .  .  .  0: *ast.Ident {
+   486  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:52:2
+   487  .  .  .  .  .  .  .  Name: "TestC"
+   488  .  .  .  .  .  .  .  Obj: *ast.Object {
+   489  .  .  .  .  .  .  .  .  Kind: const
+   490  .  .  .  .  .  .  .  .  Name: "TestC"
+   491  .  .  .  .  .  .  .  .  Decl: *(obj @ 483)
+   492  .  .  .  .  .  .  .  .  Data: 2
+   493  .  .  .  .  .  .  .  }
+   494  .  .  .  .  .  .  }
+   495  .  .  .  .  .  }
+   496  .  .  .  .  }
+   497  .  .  .  }
+   498  .  .  .  Rparen: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:53:1
+   499  .  .  }
+   500  .  .  7: *ast.GenDecl {
+   501  .  .  .  TokPos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:57:1
+   502  .  .  .  Tok: var
+   503  .  .  .  Lparen: -
+   504  .  .  .  Specs: []ast.Spec (len = 1) {
+   505  .  .  .  .  0: *ast.ValueSpec {
+   506  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   507  .  .  .  .  .  .  0: *ast.Ident {
+   508  .  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:57:5
+   509  .  .  .  .  .  .  .  Name: "test"
+   510  .  .  .  .  .  .  .  Obj: *ast.Object {
+   511  .  .  .  .  .  .  .  .  Kind: var
+   512  .  .  .  .  .  .  .  .  Name: "test"
+   513  .  .  .  .  .  .  .  .  Decl: *(obj @ 505)
+   514  .  .  .  .  .  .  .  .  Data: 0
+   515  .  .  .  .  .  .  .  }
+   516  .  .  .  .  .  .  }
+   517  .  .  .  .  .  }
+   518  .  .  .  .  .  Type: *ast.Ident {
+   519  .  .  .  .  .  .  NamePos: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:57:10
+   520  .  .  .  .  .  .  Name: "string"
+   521  .  .  .  .  .  }
+   522  .  .  .  .  }
+   523  .  .  .  }
+   524  .  .  .  Rparen: -
+   525  .  .  }
+   526  .  }
+   527  .  Scope: *ast.Scope {
+   528  .  .  Objects: map[string]*ast.Object (len = 16) {
+   529  .  .  .  "ErrCodeRbdCommonToMessage": *(obj @ 201)
+   530  .  .  .  "ErrCodeRbdVolumeEnd": *(obj @ 332)
+   531  .  .  .  "TestC": *(obj @ 488)
+   532  .  .  .  "ErrCodeRbd": *(obj @ 29)
+   533  .  .  .  "ErrCodeRbdCommonEnd": *(obj @ 167)
+   534  .  .  .  "ErrCodeRbdVolumeUnknownParameter": *(obj @ 296)
+   535  .  .  .  "test": *(obj @ 510)
+   536  .  .  .  "ErrCodeRbdVolume": *(obj @ 99)
+   537  .  .  .  "ErrCodeRbdVolumeNoEntry": *(obj @ 318)
+   538  .  .  .  "ErrCodeRbdVolumeToMessage": *(obj @ 362)
+   539  .  .  .  "TestA": *(obj @ 446)
+   540  .  .  .  "TestB": *(obj @ 474)
+   541  .  .  .  "ErrCodeRbdCommon": *(obj @ 70)
+   542  .  .  .  "ErrCodeRbdCommonBegin": *(obj @ 133)
+   543  .  .  .  "ErrCodeRbdCommonUnspecifiedError": *(obj @ 153)
+   544  .  .  .  "ErrCodeRbdVolumeBegin": *(obj @ 276)
+   545  .  .  }
+   546  .  }
+   547  .  Unresolved: []*ast.Ident (len = 9) {
+   548  .  .  0: *(obj @ 80)
+   549  .  .  1: *(obj @ 142)
+   550  .  .  2: *(obj @ 213)
+   551  .  .  3: *(obj @ 217)
+   552  .  .  4: *(obj @ 285)
+   553  .  .  5: *(obj @ 374)
+   554  .  .  6: *(obj @ 378)
+   555  .  .  7: *(obj @ 455)
+   556  .  .  8: *(obj @ 518)
+   557  .  }
+   558  .  Comments: []*ast.CommentGroup (len = 12) {
+   559  .  .  0: *(obj @ 8)
+   560  .  .  1: *(obj @ 49)
+   561  .  .  2: *(obj @ 112)
+   562  .  .  3: *(obj @ 180)
+   563  .  .  4: *(obj @ 247)
+   564  .  .  5: *(obj @ 264)
+   565  .  .  6: *(obj @ 306)
+   566  .  .  7: *(obj @ 345)
+   567  .  .  8: *(obj @ 421)
+   568  .  .  9: *(obj @ 434)
+   569  .  .  10: *(obj @ 462)
+   570  .  .  11: *ast.CommentGroup {
+   571  .  .  .  List: []*ast.Comment (len = 1) {
+   572  .  .  .  .  0: *ast.Comment {
+   573  .  .  .  .  .  Slash: /Users/xsky/go/src/k8s.io/gengo/examples/error-code/inputs/rbd_error.go:55:1
+   574  .  .  .  .  .  Text: "// hi, hello"
+   575  .  .  .  .  }
+   576  .  .  .  }
+   577  .  .  }
+   578  .  }
+   579  }
+***comment = &{17 // ErrCodeRbd defines the id of rbd module}, ***comment = &{60 // +ErrCode}, 
+***comment = &{97 // the sub module of rbd}, ***comment = &{122 // +ErrCode=ARbd}, 
+***comment = &{197 // list of rbd common error codes}, ***comment = &{231 // +ErrCode=ARbd,BCommon}, 
+***comment = &{352 // ErrCodeRbdCommonToMessage is map of common error code to their messages}, ***comment = &{427 // +ErrCode=ARbd,BCommon,ToMessage}, 
+***comment = &{600 // list of rbd volume error codes}, ***comment = &{634 // +ErrCode=ARbd,BVolume}, 
+***comment = &{841 // ErrCodeRbdVolumeToMessage is map of volume error code to their messages}, 
+***comment = &{1147 // Only for test}, 

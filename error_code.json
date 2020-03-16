@@ -1,0 +1,728 @@
+{
+	"01-01-0001": {
+		"desc": "Common unspecified error"
+	},
+	"01-01-0002": {
+		"desc": "Common json unmarshal error"
+	},
+	"01-01-0003": {
+		"desc": "Common json marshal error"
+	},
+	"01-01-0004": {
+		"desc": "Common json parse error"
+	},
+	"01-01-0005": {
+		"desc": "Common not found"
+	},
+	"01-01-0006": {
+		"desc": "Common str conversion error"
+	},
+	"01-01-0007": {
+		"desc": "Common resource exist"
+	},
+	"01-01-0008": {
+		"desc": "Common timeout"
+	},
+	"01-01-0009": {
+		"desc": "Common invalid argument"
+	},
+	"02-01-0001": {
+		"desc": "Rbd common unspecified error"
+	},
+	"02-02-0001": {
+		"desc": "Rbd volume unspecified error"
+	},
+	"02-02-0002": {
+		"desc": "Rbd volume resource busy"
+	},
+	"02-02-0003": {
+		"desc": "Rbd volume resource exist"
+	},
+	"02-02-0004": {
+		"desc": "Rbd volume unknown parameter"
+	},
+	"02-02-0005": {
+		"desc": "Rbd volume no entry"
+	},
+	"02-03-0001": {
+		"desc": "Rbd snapshot unspecified error"
+	},
+	"02-03-0002": {
+		"desc": "Rbd snapshot resource busy"
+	},
+	"02-03-0003": {
+		"desc": "Rbd snapshot resource exist"
+	},
+	"02-03-0004": {
+		"desc": "Rbd snapshot unknown parameter"
+	},
+	"02-03-0005": {
+		"desc": "Rbd snapshot no entry"
+	},
+	"02-04-0001": {
+		"desc": "Rbd volume migration unspecified error"
+	},
+	"02-04-0002": {
+		"desc": "Rbd volume migration resource busy"
+	},
+	"02-04-0003": {
+		"desc": "Rbd volume migration resource exist"
+	},
+	"02-04-0004": {
+		"desc": "Rbd volume migration unknown parameter"
+	},
+	"02-04-0005": {
+		"desc": "Rbd volume migration invalid argument"
+	},
+	"02-04-0006": {
+		"desc": "Rbd volume migration no entry"
+	},
+	"02-05-0001": {
+		"desc": "Rbd replication unspecified error"
+	},
+	"02-06-0001": {
+		"desc": "Rbd trash unspecified error"
+	},
+	"02-06-0002": {
+		"desc": "Rbd trash resource busy"
+	},
+	"02-06-0003": {
+		"desc": "Rbd trash resource exist"
+	},
+	"02-06-0004": {
+		"desc": "Rbd trash invalid argument"
+	},
+	"02-06-0005": {
+		"desc": "Rbd trash no entry"
+	},
+	"03-01-0001": {
+		"desc": "Ceph common unspecified error"
+	},
+	"03-02-0001": {
+		"desc": "Ceph deploy unspecified error"
+	},
+	"03-03-0001": {
+		"desc": "Ceph pool unspecified error"
+	},
+	"03-04-0001": {
+		"desc": "Ceph mon unspecified error"
+	},
+	"03-04-0002": {
+		"desc": "Ceph mon disk eio"
+	},
+	"03-04-0003": {
+		"desc": "Ceph mon nic down"
+	},
+	"03-04-0004": {
+		"desc": "Ceph mon disk full"
+	},
+	"03-04-0005": {
+		"desc": "Ceph mon election too many"
+	},
+	"03-04-0006": {
+		"desc": "Ceph mon program error"
+	},
+	"03-04-0007": {
+		"desc": "Ceph mon timeout"
+	},
+	"03-04-0008": {
+		"desc": "Ceph mon receive sigint"
+	},
+	"03-04-0009": {
+		"desc": "Ceph mon receive sigill"
+	},
+	"03-04-000A": {
+		"desc": "Ceph mon receive sigabrt"
+	},
+	"03-04-000B": {
+		"desc": "Ceph mon receive sigbus"
+	},
+	"03-04-000C": {
+		"desc": "Ceph mon receive sigfpe"
+	},
+	"03-04-000D": {
+		"desc": "Ceph mon receive sigus r1"
+	},
+	"03-04-000E": {
+		"desc": "Ceph mon receive sigsegv"
+	},
+	"03-04-000F": {
+		"desc": "Ceph mon receive sigterm"
+	},
+	"03-04-0010": {
+		"desc": "Ceph mon receive sigxcpu"
+	},
+	"03-04-0011": {
+		"desc": "Ceph mon receive sigxfsz"
+	},
+	"03-04-0012": {
+		"desc": "Ceph mon receive sigsys"
+	},
+	"03-05-0001": {
+		"desc": "Ceph osd unspecified error"
+	},
+	"03-05-0002": {
+		"desc": "Ceph osd disk eio"
+	},
+	"03-05-0003": {
+		"desc": "Ceph osd nic down"
+	},
+	"03-05-0004": {
+		"desc": "Ceph osd disk slow"
+	},
+	"03-05-0005": {
+		"desc": "Ceph osd markdown too many"
+	},
+	"03-05-0006": {
+		"desc": "Ceph osd thread timeout"
+	},
+	"03-05-0007": {
+		"desc": "Ceph osd program error"
+	},
+	"03-05-0008": {
+		"desc": "Ceph osd wrong osdmap"
+	},
+	"03-05-0009": {
+		"desc": "Ceph osd net rebind fail"
+	},
+	"03-05-000A": {
+		"desc": "Ceph osd net heartbeat timeout"
+	},
+	"03-05-000B": {
+		"desc": "Ceph osd domain failure"
+	},
+	"03-05-000C": {
+		"desc": "Ceph osd mon beacon timeout"
+	},
+	"03-05-000D": {
+		"desc": "Ceph osd mon store no entry"
+	},
+	"03-05-000E": {
+		"desc": "Ceph osd decode from buffer error"
+	},
+	"03-05-000F": {
+		"desc": "Ceph osd connect refused"
+	},
+	"03-05-0010": {
+		"desc": "Ceph osd db write fail"
+	},
+	"03-05-0011": {
+		"desc": "Ceph osd receive sigint"
+	},
+	"03-05-0012": {
+		"desc": "Ceph osd receive sigill"
+	},
+	"03-05-0013": {
+		"desc": "Ceph osd receive sigabrt"
+	},
+	"03-05-0014": {
+		"desc": "Ceph osd receive sigbus"
+	},
+	"03-05-0015": {
+		"desc": "Ceph osd receive sigfpe"
+	},
+	"03-05-0016": {
+		"desc": "Ceph osd receive sigus r1"
+	},
+	"03-05-0017": {
+		"desc": "Ceph osd receive sigsegv"
+	},
+	"03-05-0018": {
+		"desc": "Ceph osd receive sigterm"
+	},
+	"03-05-0019": {
+		"desc": "Ceph osd receive sigxcpu"
+	},
+	"03-05-001A": {
+		"desc": "Ceph osd receive sigxfsz"
+	},
+	"03-05-001B": {
+		"desc": "Ceph osd receive sigsys"
+	},
+	"03-05-001C": {
+		"desc": "Ceph osd heavy slow io"
+	},
+	"03-05-001D": {
+		"desc": "Ceph osd disk subhealth"
+	},
+	"03-06-0001": {
+		"desc": "Ceph crush unspecified error"
+	},
+	"03-07-0001": {
+		"desc": "Ceph rados unspecified error"
+	},
+	"03-08-0001": {
+		"desc": "Ceph pg unspecified error"
+	},
+	"05-01-0001": {
+		"desc": "Net common unspecified error"
+	},
+	"05-01-0002": {
+		"desc": "Net common invalid ip addr"
+	},
+	"05-02-0001": {
+		"desc": "Net interface unspecified error"
+	},
+	"05-02-0002": {
+		"desc": "Net interface open file failure"
+	},
+	"05-02-0003": {
+		"desc": "Net interface read file failure"
+	},
+	"05-02-0004": {
+		"desc": "Net interface not found"
+	},
+	"05-02-0005": {
+		"desc": "Net interface parse stats error"
+	},
+	"05-03-0001": {
+		"desc": "Net fc unspecified error"
+	},
+	"05-03-0002": {
+		"desc": "Net fc read file failure"
+	},
+	"05-04-0001": {
+		"desc": "Net bridge unspecified error"
+	},
+	"05-04-0002": {
+		"desc": "Net bridge read file failure"
+	},
+	"05-05-0001": {
+		"desc": "Net perf unspecified error"
+	},
+	"05-05-0002": {
+		"desc": "Net perf subhealth"
+	},
+	"06-01-0001": {
+		"desc": "Disk common unspecified error"
+	},
+	"06-01-0002": {
+		"desc": "Disk common unsupported driver type"
+	},
+	"06-02-0001": {
+		"desc": "Disk device unspecified error"
+	},
+	"06-02-0002": {
+		"desc": "Disk device offline"
+	},
+	"06-02-0003": {
+		"desc": "Cache disk device offline"
+	},
+	"06-03-0001": {
+		"desc": "Disk smart unspecified error"
+	},
+	"06-04-0001": {
+		"desc": "Disk fs unspecified error"
+	},
+	"06-05-0001": {
+		"desc": "Disk raid unspecified error"
+	},
+	"06-05-0002": {
+		"desc": "Disk raid module not loaded"
+	},
+	"06-05-0003": {
+		"desc": "Disk raid invalid tool"
+	},
+	"07-01-0001": {
+		"desc": "Keepalived common unspecified error"
+	},
+	"07-02-0001": {
+		"desc": "Keepalived config unspecified error"
+	},
+	"09-01-0001": {
+		"desc": "Access path common unspecified error"
+	},
+	"09-01-0002": {
+		"desc": "Access path common exception"
+	},
+	"0E-01-0001": {
+		"desc": "Xdc common unspecified error"
+	},
+	"0E-02-0001": {
+		"desc": "Xdc access path unspecified error"
+	},
+	"0E-03-0001": {
+		"desc": "Xdc target unspecified error"
+	},
+	"0E-04-0001": {
+		"desc": "Xdc chap unspecified error"
+	},
+	"0E-05-0001": {
+		"desc": "Xdc lun unspecified error"
+	},
+	"0E-06-0001": {
+		"desc": "Xdc client unspecified error"
+	},
+	"12-01-0001": {
+		"desc": "Os common unspecified error"
+	},
+	"12-02-0001": {
+		"desc": "Os file unspecified error"
+	},
+	"12-02-0002": {
+		"desc": "Os file read io error"
+	},
+	"12-02-0003": {
+		"desc": "Os file write io error"
+	},
+	"12-02-0004": {
+		"desc": "Os file open error"
+	},
+	"12-03-0001": {
+		"desc": "Os process unspecified error"
+	},
+	"12-04-0001": {
+		"desc": "Os service unspecified error"
+	},
+	"13-01-0001": {
+		"desc": "Etcd common unspecified error"
+	},
+	"13-01-0002": {
+		"desc": "Etcd common lock ctx cancelled"
+	},
+	"13-01-0003": {
+		"desc": "Etcd common set key failed"
+	},
+	"13-02-0001": {
+		"desc": "Etcd installation unspecified error"
+	},
+	"15-01-0001": {
+		"desc": "Http common unspecified error"
+	},
+	"15-01-0002": {
+		"desc": "Http common invalid credential"
+	},
+	"15-01-0003": {
+		"desc": "Http common request error"
+	},
+	"15-01-0004": {
+		"desc": "Http common parse url error"
+	},
+	"15-01-0005": {
+		"desc": "Http common read resp body error"
+	},
+	"16-01-0001": {
+		"desc": "Rpc common unspecified error"
+	},
+	"16-01-0002": {
+		"desc": "Rpc common host down"
+	},
+	"16-01-0003": {
+		"desc": "Rpc common connection failed"
+	},
+	"18-01-0001": {
+		"desc": "Task common unspecified error"
+	},
+	"18-01-0002": {
+		"desc": "Task common xdc exception"
+	},
+	"18-01-0003": {
+		"desc": "Task common dead"
+	},
+	"18-02-0001": {
+		"desc": "Task volume unspecified error"
+	},
+	"18-02-0002": {
+		"desc": "Task volume invalid migration state"
+	},
+	"18-02-0003": {
+		"desc": "Task volume migration error"
+	},
+	"18-02-0004": {
+		"desc": "Task volume status invalid"
+	},
+	"18-02-0005": {
+		"desc": "Task volume migration status invalid"
+	},
+	"18-02-0006": {
+		"desc": "Task volume trash resource status invalid"
+	},
+	"18-02-0007": {
+		"desc": "Task volume replication status error"
+	},
+	"18-02-0008": {
+		"desc": "Task volume contains snapshots error"
+	},
+	"18-02-0009": {
+		"desc": "Task volume resource exist"
+	},
+	"18-02-000A": {
+		"desc": "Task volume invalid argument"
+	},
+	"18-03-0001": {
+		"desc": "Task snapshot unspecified error"
+	},
+	"18-03-0002": {
+		"desc": "Task snapshot status invalid"
+	},
+	"18-03-0003": {
+		"desc": "Task snapshot resource exist"
+	},
+	"18-04-0001": {
+		"desc": "Task pool unspecified error"
+	},
+	"18-04-0002": {
+		"desc": "Task pool status invalid"
+	},
+	"18-04-0003": {
+		"desc": "Task pool pg state not active clean"
+	},
+	"18-04-0004": {
+		"desc": "Task pool not found"
+	},
+	"18-04-0005": {
+		"desc": "Task pool placement node occupying"
+	},
+	"18-04-0006": {
+		"desc": "Task pool pg not found"
+	},
+	"18-04-0007": {
+		"desc": "Task pool check pg state not passed"
+	},
+	"18-04-0008": {
+		"desc": "Task pool osd status invalid"
+	},
+	"19-01-0001": {
+		"desc": "Dp common unspecified error"
+	},
+	"19-01-0002": {
+		"desc": "Dp common unknown command"
+	},
+	"19-01-0003": {
+		"desc": "Dp common invalid gateway numbers"
+	},
+	"19-02-0001": {
+		"desc": "Dp s3 config not found"
+	},
+	"19-02-0002": {
+		"desc": "Dp s3 not support platform"
+	},
+	"19-02-0003": {
+		"desc": "Dp s3 invalid root"
+	},
+	"19-02-0004": {
+		"desc": "Dp s3 path not exist"
+	},
+	"19-02-0005": {
+		"desc": "Dp s3 path not dir"
+	},
+	"19-02-0006": {
+		"desc": "Dp s3 invalid list objects version"
+	},
+	"19-02-0007": {
+		"desc": "Dp s3 network error"
+	},
+	"19-03-0001": {
+		"desc": "Dp scheduler unknown type"
+	},
+	"19-03-0002": {
+		"desc": "Dp scheduler empty queue"
+	},
+	"19-03-0003": {
+		"desc": "Dp scheduler no queue"
+	},
+	"19-04-0001": {
+		"desc": "Dp path invalid file name"
+	},
+	"19-04-0002": {
+		"desc": "Dp path invalid timestamp"
+	},
+	"19-05-0001": {
+		"desc": "Dp block snapshot volume invalid status"
+	},
+	"19-05-0002": {
+		"desc": "Dp block snapshot volume invalid action status"
+	},
+	"19-05-0003": {
+		"desc": "Dp block snapshot interrupt building"
+	},
+	"19-05-0004": {
+		"desc": "Dp block snapshot previous running"
+	},
+	"19-05-0005": {
+		"desc": "Dp block snapshot blocking"
+	},
+	"19-06-0001": {
+		"desc": "Dp block backup upload len mismatch"
+	},
+	"19-06-0002": {
+		"desc": "Dp block backup job volume invalid status"
+	},
+	"19-06-0003": {
+		"desc": "Dp block backup job volume invalid action status"
+	},
+	"19-06-0004": {
+		"desc": "Dp block backup job mapping invalid status"
+	},
+	"19-06-0005": {
+		"desc": "Dp block backup job snapshot cloned"
+	},
+	"19-06-0006": {
+		"desc": "Dp block backup job snapshot invalid status"
+	},
+	"19-06-0007": {
+		"desc": "Dp block backup job snapshot invalid action status"
+	},
+	"19-06-0008": {
+		"desc": "Dp block backup job chain name mismatch"
+	},
+	"19-06-0009": {
+		"desc": "Dp block backup job chain name conflict"
+	},
+	"19-06-000A": {
+		"desc": "Dp block backup job snapshot deleted"
+	},
+	"19-06-000B": {
+		"desc": "Dp block backup job cluster mismatch"
+	},
+	"19-06-000C": {
+		"desc": "Dp block backup job backup file not found"
+	},
+	"19-06-000D": {
+		"desc": "Dp block backup policy not found in cache"
+	},
+	"19-06-000E": {
+		"desc": "Dp block backup mapping not found in cache"
+	},
+	"19-06-000F": {
+		"desc": "Dp block backup job is running"
+	},
+	"19-06-0010": {
+		"desc": "Dp block backup interrupt not running"
+	},
+	"19-06-0011": {
+		"desc": "Dp block backup interrupt timeout"
+	},
+	"19-06-0012": {
+		"desc": "Dp block backup interrupt add queue"
+	},
+	"19-06-0013": {
+		"desc": "Dp block backup previous running"
+	},
+	"19-06-0014": {
+		"desc": "Dp block backup removing"
+	},
+	"19-06-0015": {
+		"desc": "Dp block backup conflict"
+	},
+	"19-06-0016": {
+		"desc": "Dp block backup blocking"
+	},
+	"19-06-0017": {
+		"desc": "Dp block backup cancelled"
+	},
+	"19-07-0001": {
+		"desc": "Dp block recovery read segment len failed"
+	},
+	"19-07-0002": {
+		"desc": "Dp block recovery unexpect segment num"
+	},
+	"19-07-0003": {
+		"desc": "Dp block recovery file not found"
+	},
+	"19-07-0004": {
+		"desc": "Dp block recovery file num mismatch"
+	},
+	"19-07-0005": {
+		"desc": "Dp block recovery metadata file not found"
+	},
+	"19-07-0006": {
+		"desc": "Dp block recovery volume snapshot exist"
+	},
+	"19-07-0007": {
+		"desc": "Dp block recovery volume snapshot num mismatch"
+	},
+	"19-07-0008": {
+		"desc": "Dp block recovery volume snapshot mismatch"
+	},
+	"19-07-0009": {
+		"desc": "Dp block recovery snapshot mismatch"
+	},
+	"19-07-000A": {
+		"desc": "Dp block recovery segment num out of range"
+	},
+	"19-07-000B": {
+		"desc": "Dp block recovery backup not available"
+	},
+	"19-07-000C": {
+		"desc": "Dp block recovery bitmap broken"
+	},
+	"19-07-000D": {
+		"desc": "Dp block recovery interrupt timeout"
+	},
+	"19-07-000E": {
+		"desc": "Dp block recovery interrupt not running"
+	},
+	"19-07-000F": {
+		"desc": "Dp block recovery blocking"
+	},
+	"19-08-0001": {
+		"desc": "Dp fs snapshot volume invalid status"
+	},
+	"19-08-0002": {
+		"desc": "Dp fs snapshot folder invalid status"
+	},
+	"19-08-0003": {
+		"desc": "Dp fs snapshot folder invalid action status"
+	},
+	"19-08-0004": {
+		"desc": "Dp fs snapshot policy nil"
+	},
+	"19-08-0005": {
+		"desc": "Dp fs snapshot policy mismatch"
+	},
+	"19-08-0006": {
+		"desc": "Dp fs snapshot deleting err"
+	},
+	"19-08-0007": {
+		"desc": "Dp fs snapshot blocking"
+	},
+	"19-09-0001": {
+		"desc": "Dp utils hash magic mismatch"
+	},
+	"19-09-0002": {
+		"desc": "Dp utils hash sum mismatch"
+	},
+	"19-09-0003": {
+		"desc": "Dp utils hash invalid version"
+	},
+	"19-09-0004": {
+		"desc": "Dp utils hash invalid algorithm"
+	},
+	"19-09-0005": {
+		"desc": "Dp utils compress invalid magic"
+	},
+	"19-09-0006": {
+		"desc": "Dp utils compress invalid version"
+	},
+	"19-09-0007": {
+		"desc": "Dp utils compress invalid algorithm"
+	},
+	"19-09-0008": {
+		"desc": "Dp utils crypto magic mismatch"
+	},
+	"19-09-0009": {
+		"desc": "Dp utils crypto key mismatch"
+	},
+	"19-09-000A": {
+		"desc": "Dp utils crypto invalid hmac"
+	},
+	"19-09-000B": {
+		"desc": "Dp utils crypto invalid version"
+	},
+	"19-09-000C": {
+		"desc": "Dp utils crypto invalid block algorithm"
+	},
+	"19-09-000D": {
+		"desc": "Dp utils crypto invalid hmac algorithm"
+	},
+	"19-09-000E": {
+		"desc": "Dp utils crypto init err"
+	},
+	"19-09-000F": {
+		"desc": "Dp utils crypto invalid magic"
+	},
+	"19-09-0010": {
+		"desc": "Dp utils crypto invalid algorithm"
+	}
+}
