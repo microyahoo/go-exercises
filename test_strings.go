@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"unicode/utf8"
+	"unsafe"
 )
 
 func main() {
@@ -32,7 +33,7 @@ func main() {
 	fmt.Println("Printf with %+q:")
 	fmt.Printf("%+q\n", sample)
 
-	fmt.Println("----------------------------------------")
+	fmt.Println("------------------1---------------------")
 	const placeOfInterest = `⌘`
 
 	fmt.Printf("plain string: ")
@@ -54,9 +55,9 @@ func main() {
 	fmt.Printf("\nThe length of placeOfInterest: %d", len(placeOfInterest))
 	fmt.Printf("\n")
 
-	fmt.Println("----------------------------------------")
+	fmt.Println("---------------japan-------------------------")
 
-	const nihongo = "日本語"
+	const nihongo = "日本語888877"
 	fmt.Println(len(nihongo))
 	for index, runeValue := range nihongo {
 		fmt.Printf("%#U starts at byte position %d\n", runeValue, index)
@@ -67,7 +68,7 @@ func main() {
 		w = width
 	}
 
-	fmt.Println("----------------------------------------")
+	fmt.Println("------------------2---------------------")
 
 	a := "Randal"
 	for i := 0; i < len(a); i++ {
@@ -75,11 +76,16 @@ func main() {
 		fmt.Printf("%c ", a[i])
 	}
 
-	fmt.Println("\n----------------------------------------")
+	fmt.Println("\n------------------3---------------------")
 
 	var s string
 	s = "中国string"
 	r := []rune(s)
+	fmt.Println(unsafe.Sizeof(r))
+	for i := range r {
+		fmt.Println(unsafe.Sizeof(r[i]))
+	}
+	fmt.Println(len(r))
 	for i := 0; i < len(r); i++ {
 		fmt.Printf("%x ", r[i])
 	}
@@ -87,7 +93,7 @@ func main() {
 		fmt.Printf("%c ", r[i])
 	}
 
-	fmt.Println("\n----------------------------------------")
+	fmt.Println("\n------------------4---------------------")
 
 	// for range对字符串进行遍历时，每次获取到的对象都是rune类型的
 	s = "知"

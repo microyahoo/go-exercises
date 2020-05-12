@@ -5,18 +5,18 @@ import (
 	"reflect"
 )
 
-type User struct {
+type user struct {
 	Id   int
 	Name string
 	Age  int
 }
 
-func (u User) ReflectCallFunc() {
+func (u user) ReflectCallFunc() {
 	fmt.Println("Allen.Wu ReflectCallFunc")
 }
 
 func main() {
-	user := User{1, "Allen.Wu", 25}
+	user := user{1, "Allen.Wu", 25}
 	DoFiledAndMethod(user)
 
 	var num float64 = 1.2345
@@ -43,12 +43,15 @@ func main() {
 
 }
 
-func DoFiledAndMethod(input User) {
+func DoFiledAndMethod(input user) {
 	getType := reflect.TypeOf(input)
 	fmt.Println("get Type is :", getType.Name())
 
 	getValue := reflect.ValueOf(input)
 	fmt.Println("get all Fields is:", getValue)
+	fmt.Println("\ttype is:", getValue.Type())
+	fmt.Println("\tkind is:", getValue.Kind())
+	fmt.Println("\tinterface is:", getValue.Interface())
 
 	for i := 0; i < getType.NumField(); i++ {
 		field := getType.Field(i)

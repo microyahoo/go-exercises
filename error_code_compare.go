@@ -38,11 +38,11 @@ func main() {
 	// unmarshall it
 	err = json.Unmarshal(data1, &errCodes)
 	if err != nil {
-		fmt.Println("error: ", err)
+		fmt.Println("error error_code.json: ", err)
 	}
 	err = json.Unmarshal(data2, &errCodeSuggests)
 	if err != nil {
-		fmt.Println("error: ", err)
+		fmt.Println("error code.json: ", err)
 	}
 	// fmt.Printf("%#v\n", errCodes)
 	// fmt.Printf("%#v\n", errCodeSuggests)

@@ -98,6 +98,7 @@ func main() {
 `
 
 	// crcInfo = `{}`
+	// crcInfo = `["volume-group-8cac54303a0b42cd88f81baa5a070d85","volume-group-99b9227d806940a09c77b3888a26cfe0"]`
 	fmt.Println("---------crc info-------------------")
 	var info CRCMismatchInfo
 	if err = json.Unmarshal([]byte(crcInfo), &info); err != nil {
@@ -140,6 +141,13 @@ func main() {
 	fmt.Println(infoMap)
 	fmt.Println(infoArray)
 
+	vgInfoOutput := `["volume-group-8cac54303a0b42cd88f81baa5a070d85","volume-group-99b9227d806940a09c77b3888a26cfe0"]`
+	fmt.Println("---------vg info-------------------")
+	var vgInfo []string
+	if err = json.Unmarshal([]byte(vgInfoOutput), &vgInfo); err != nil {
+		fmt.Println(err)
+	}
+	fmt.Printf("%s\n", vgInfo)
 }
 
 // CRCMismatchInfo contains the mismatched and recoverd CRC info.

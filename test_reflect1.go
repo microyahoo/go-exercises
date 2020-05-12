@@ -28,7 +28,7 @@ func main() {
 	fmt.Printf("v.Kind() = %v\n", v.Kind())
 	fmt.Printf("v.Type() = %v\n", v.Type())
 
-	fmt.Println("------------------------------")
+	fmt.Println("-----------------1------------")
 	var z []A
 	var y []map[string]int
 	m := reflect.ValueOf(z)
@@ -48,7 +48,7 @@ func main() {
 		fmt.Printf("m.Type() = %v\n", m.Type())
 	}
 
-	fmt.Println("------------------------------")
+	fmt.Println("------------2-----------------")
 	a := reflect.ValueOf(&x)
 	fmt.Println(a)
 	fmt.Printf("a.CanSet() = %v\n", a.CanSet())
@@ -60,4 +60,10 @@ func main() {
 	fmt.Printf("a.Elem() = %v\n", a.Elem())
 	fmt.Printf("a.Elem().CanSet() = %v\n", a.Elem().CanSet())
 	fmt.Printf("a.Elem().Type() = %v\n", a.Elem().Type())
+
+	fmt.Println("---------------1--------------")
+	var f float64 = 3.4
+	v2 := reflect.ValueOf(f)
+	o := v2.Interface().(float64)
+	fmt.Println(o)
 }

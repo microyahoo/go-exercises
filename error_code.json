@@ -26,6 +26,9 @@
 	"01-01-0009": {
 		"desc": "Common invalid argument"
 	},
+	"01-01-000A": {
+		"desc": "Common trigger task error"
+	},
 	"02-01-0001": {
 		"desc": "Rbd common unspecified error"
 	},
@@ -245,6 +248,12 @@
 	"03-05-001D": {
 		"desc": "Ceph osd disk subhealth"
 	},
+	"03-05-001E": {
+		"desc": "Ceph osd crc check"
+	},
+	"03-05-001F": {
+		"desc": "Ceph osd host down"
+	},
 	"03-06-0001": {
 		"desc": "Ceph crush unspecified error"
 	},
@@ -429,58 +438,61 @@
 		"desc": "Task volume migration error"
 	},
 	"18-02-0004": {
-		"desc": "Task volume status invalid"
-	},
-	"18-02-0005": {
-		"desc": "Task volume migration status invalid"
-	},
-	"18-02-0006": {
-		"desc": "Task volume trash resource status invalid"
-	},
-	"18-02-0007": {
 		"desc": "Task volume replication status error"
 	},
-	"18-02-0008": {
+	"18-02-0005": {
 		"desc": "Task volume contains snapshots error"
 	},
-	"18-02-0009": {
+	"18-02-0006": {
 		"desc": "Task volume resource exist"
 	},
-	"18-02-000A": {
+	"18-02-0007": {
 		"desc": "Task volume invalid argument"
 	},
 	"18-03-0001": {
 		"desc": "Task snapshot unspecified error"
 	},
 	"18-03-0002": {
-		"desc": "Task snapshot status invalid"
-	},
-	"18-03-0003": {
 		"desc": "Task snapshot resource exist"
 	},
 	"18-04-0001": {
 		"desc": "Task pool unspecified error"
 	},
 	"18-04-0002": {
-		"desc": "Task pool status invalid"
-	},
-	"18-04-0003": {
 		"desc": "Task pool pg state not active clean"
 	},
-	"18-04-0004": {
+	"18-04-0003": {
 		"desc": "Task pool not found"
 	},
-	"18-04-0005": {
+	"18-04-0004": {
 		"desc": "Task pool placement node occupying"
 	},
-	"18-04-0006": {
+	"18-04-0005": {
 		"desc": "Task pool pg not found"
 	},
-	"18-04-0007": {
+	"18-04-0006": {
 		"desc": "Task pool check pg state not passed"
 	},
-	"18-04-0008": {
-		"desc": "Task pool osd status invalid"
+	"18-05-0001": {
+		"desc": "Task osd unspecified error"
+	},
+	"18-05-0002": {
+		"desc": "Task osd conf not found"
+	},
+	"18-05-0003": {
+		"desc": "Task osd public ip not found"
+	},
+	"18-05-0004": {
+		"desc": "Task osd private ip not found"
+	},
+	"18-05-0005": {
+		"desc": "Task osd still up"
+	},
+	"18-05-0006": {
+		"desc": "Task osd pg state not healthy"
+	},
+	"18-05-0007": {
+		"desc": "Task osd unmarshal error"
 	},
 	"19-01-0001": {
 		"desc": "Dp common unspecified error"
@@ -724,5 +736,23 @@
 	},
 	"19-09-0010": {
 		"desc": "Dp utils crypto invalid algorithm"
+	},
+	"1A-01-0001": {
+		"desc": "Host common unspecified error"
+	},
+	"1A-02-0001": {
+		"desc": "Host installation unspecified error"
+	},
+	"1A-02-0002": {
+		"desc": "Host installation transfer file"
+	},
+	"1A-02-0003": {
+		"desc": "Host installation transfer package"
+	},
+	"1A-02-0004": {
+		"desc": "Host installation install package"
+	},
+	"1A-02-0005": {
+		"desc": "Host installation start agent"
 	}
 }
