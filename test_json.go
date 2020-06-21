@@ -4,15 +4,18 @@ import (
 	"encoding/json"
 	"fmt"
 	"reflect"
+	"time"
 )
 
 func main() {
 	type User struct {
-		UserId   int    `json:"user_id" bson:"user_id"`
+		UserID   int    `json:"user_id" bson:"user_id"`
 		UserName string `json:"user_name" bson:"user_name"`
+		Age      int32  `json:"Age"`
+		UserXX   string
 	}
 	// 输出json格式
-	u := &User{UserId: 1, UserName: "tony"}
+	u := &User{UserID: 1, UserName: "tony", Age: 32, UserXX: "xxx"}
 	j, _ := json.Marshal(u)
 	fmt.Println(string(j))
 	// 输出内容：{"user_id":1,"user_name":"tony"}
@@ -24,4 +27,6 @@ func main() {
 	// 输出：user_id
 	fmt.Println(field.Tag.Get("bson"))
 	// 输出：user_id
+
+	_ = time.Duration(64)
 }

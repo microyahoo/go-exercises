@@ -28,7 +28,6 @@ var (
 // i = 10, name = , value = 0.5s
 // i = 11, name = seconds, value = 0.5
 // The pattern is -1.2d0.5s: -28h48m0.5s
-
 func ParseDuration(s string) (time.Duration, error) {
 	var (
 		matches []string
@@ -211,6 +210,11 @@ func main() {
 	}
 
 	fmt.Println("---------------3---------------")
+	duration, err = time.ParseDuration("2d")
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(duration)
 }
 
 func test_once() {
