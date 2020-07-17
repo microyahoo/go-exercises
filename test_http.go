@@ -57,7 +57,7 @@ func main() {
 	// roundTripper.RoundTrip(req)
 	client := http.Client{Transport: defaultRoundTripper}
 	manager := &prometheusManager{client: client}
-	volumeID := 1
+	volumeID := 1000000000
 	host := "10.255.101.74"
 	metricQueries := toQueryMap(namespace, volumeSubsystem)
 	manager.deleteMetrics(metricQueries, host, int64(volumeID))
