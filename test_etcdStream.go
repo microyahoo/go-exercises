@@ -8,6 +8,8 @@ import (
 	"log"
 	"net"
 	"net/http"
+	"os"
+	"os/signal"
 	"strconv"
 	"strings"
 	"sync"
@@ -53,7 +55,7 @@ func main() {
 			case <-ticker.C:
 				peers := tr1.GetPeers()
 				for i := range peers {
-					peers[i].send(&Message{MsgType: msgTypeProp, MsgBody: "Hello, I am tr1"})
+					peers[i].send(&Message{MsgType: msgTypeProp, MsgBody: "Hello, I am transport 1"})
 				}
 			}
 		}
@@ -67,16 +69,29 @@ func main() {
 			case <-ticker.C:
 				peers := tr2.GetPeers()
 				for i := range peers {
-					peers[i].send(&Message{MsgType: msgTypeProp, MsgBody: "Hello, I am tr2"})
+					peers[i].send(&Message{MsgType: msgTypeProp, MsgBody: "Hello, I am transport 2"})
 				}
 			}
 		}
 	}()
 
-	time.Sleep(time.Minute * 10)
+	closeC := newCloseNotifier()
+	c := make(chan os.Signal, 1)
+	signal.Notify(c, os.Interrupt)
+	go func() {
+		for sig := range c {
+			fmt.Fprintln(os.Stderr, "etcd stream: received signal:", sig)
+			if os.Interrupt == sig {
+				//关闭退出
+				tr1.Stop()
+				tr2.Stop()
+				closeC.Close()
+				os.Exit(1)
+			}
+		}
+	}()
 
-	tr1.Stop()
-	tr2.Stop()
+	<-closeC.closeNotify()
 }
 
 type Transport struct {
@@ -131,7 +146,7 @@ func (tr *Transport) AddPeer(id int64, peerURL string) {
 func (tr *Transport) Handler() http.Handler {
 	streamHandler := newStreamHandler(tr, tr.ID, tr.ClusterID)
 	mux := http.NewServeMux()
-	mux.Handle("/raft/stream"+"/", streamHandler)
+	mux.Handle("/raft/stream/", streamHandler)
 	return mux
 }
 
@@ -169,10 +184,12 @@ func (h *streamHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	p, ok := h.tr.peers[int64(pid)]
 	if !ok {
 		w.WriteHeader(http.StatusNotFound)
+		w.Write([]byte(fmt.Sprintf("Peer '%d' is not in transport", pid)))
 		time.Sleep(time.Second * 5)
 		return
 	}
 
+	log.Printf("Stream handler: %#v, %s", r.URL.String(), r.Header)
 	w.WriteHeader(http.StatusOK) //返回状态码 200
 
 	w.(http.Flusher).Flush() //调用Flush()方法将响应数据发送到对端节点
@@ -185,7 +202,7 @@ func (h *streamHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		Closer:  c,
 		peerID:  h.id,
 	}
-	p.attachOutgoingConn(conn) //建立连接,将outgoingConn实例与对应的streamWriter实例绑定
+	p.attachOutgoingConn(conn) //建立连接, 将outgoingConn实例与对应的streamWriter实例绑定
 	<-c.closeNotify()
 }
 
@@ -336,7 +353,7 @@ func (sw *streamWriter) run() {
 				log.Printf("Send to peer peerID is %d fail, error is: %v", sw.peerID, err)
 			} else {
 				flusher.Flush()
-				log.Printf("Send to peer peerID is %d success, MsgType is: %s, MsgBody is: %s",
+				log.Printf("Succeed to send message to peer peerID: %d, MsgType is: %s, MsgBody is: %s",
 					sw.peerID, msg.MsgType, msg.MsgBody)
 			}
 
@@ -350,9 +367,10 @@ func (sw *streamWriter) run() {
 					sw.peerID, err)
 			} else {
 				flusher.Flush()
-				log.Printf("Send to peer heartbeat data success peerID is %d ", sw.peerID)
+				log.Printf("Succeed to send heartbeat data to peer peerID: %d", sw.peerID)
 			}
 		case conn := <-sw.connc:
+			log.Printf("Connection %#v is comming...", conn)
 			sw.enc = &messageEncoder{w: conn.Writer}
 			flusher = conn.Flusher
 			sw.closer = conn.Closer
@@ -399,15 +417,15 @@ func newStreamReader(localID, peerID int64, peerURL string, tr *Transport) *stre
 func (sr *streamReader) run() {
 	// time.Sleep(time.Second * 5)
 	for {
-		readColser, err := sr.dial()
+		readCloser, err := sr.dial()
 		if err != nil {
 			log.Printf("Dial peer error, peerID is %d, err is: %v", sr.peerID, err)
 			time.Sleep(time.Second * 10)
 			continue
 		}
-		sr.closer = readColser
+		sr.closer = readCloser
 
-		err = sr.decodeLoop(readColser)
+		err = sr.decodeLoop(readCloser)
 		if err != nil {
 			log.Printf("DecodeLoop error, peerID is %d, error is %v", sr.peerID, err)
 		}
@@ -423,6 +441,7 @@ func (sr *streamReader) dial() (io.ReadCloser, error) {
 
 	req.Header.Set("PeerID", fmt.Sprintf("%d", sr.localID))
 
+	log.Printf("Start to dial peer: %s", req.URL.String())
 	resp, err := sr.tr.streamRt.RoundTrip(req)
 	if err != nil {
 		return nil, err
