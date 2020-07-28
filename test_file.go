@@ -16,7 +16,8 @@ const (
 )
 
 func main() {
-	path := "/Users/xsky/go/src/github.com/etcd-io/etcd/infra1.etcd/member/wal/0000000000000000-0000000000000000.wal"
+	path := "/home/admin/data/node1/etcd/10.255.101.74.etcd/member/wal/0000000000000001-000000000006c314.wal"
+	// path := "/Users/xsky/go/src/github.com/etcd-io/etcd/infra1.etcd/member/wal/0000000000000000-0000000000000000.wal"
 	f, err := os.OpenFile(path, os.O_RDONLY, PrivateFileMode)
 	if err != nil {
 		fmt.Println(err)
@@ -33,7 +34,7 @@ func main() {
 	fmt.Println(x)
 	fmt.Println(bytes)
 
-	fmt.Println("==============================")
+	fmt.Println("===============1==============")
 	_ = io.Copy
 	f.Seek(0, io.SeekStart)
 	reader = bufio.NewReader(f)
@@ -50,7 +51,7 @@ func main() {
 	recBytes, padBytes := decodeFrameSize(n)
 	fmt.Println(recBytes, padBytes)
 
-	fmt.Println("==============================")
+	fmt.Println("===============2==============")
 	var num int64
 	s := string([]byte{12, 0, 0, 0, 0, 0, 0, 0x80})
 	fmt.Println([]byte(s))
@@ -63,6 +64,11 @@ func main() {
 	fmt.Println(num)
 	fmt.Println(decodeFrameSize(num))
 	fmt.Printf("%b\n", 0x84)
+
+	fmt.Println("===============3==============")
+	for i := 0; i < 20; i++ {
+		encodeFrameSize(i)
+	}
 }
 
 func decodeFrameSize(lenField int64) (recBytes int64, padBytes int64) {
@@ -75,4 +81,15 @@ func decodeFrameSize(lenField int64) (recBytes int64, padBytes int64) {
 		padBytes = int64((uint64(lenField) >> 56) & 0x7)
 	}
 	return recBytes, padBytes
+}
+
+func encodeFrameSize(dataBytes int) (lenField uint64, padBytes int) {
+	lenField = uint64(dataBytes)
+	// force 8 byte alignment so length never gets a torn write
+	padBytes = (8 - (dataBytes % 8)) % 8
+	if padBytes != 0 {
+		lenField |= uint64(0x80|padBytes) << 56
+	}
+	fmt.Printf("dataBytes = %d, lenField = %b, %d, padBytes = %b, %d\n", dataBytes, lenField, lenField, padBytes, padBytes)
+	return lenField, padBytes
 }
