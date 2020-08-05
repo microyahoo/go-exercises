@@ -28,4 +28,21 @@ func main() {
 	*lang = "Golang"
 
 	fmt.Println(p)
+
+	fmt.Println("-----------------------------------")
+	rules := map[string]int{
+		"a": 2,
+		"b": 3,
+	}
+	fmt.Println(rules)
+	for k, v := range rules {
+		v++
+		rules[k] = v
+	}
+	fmt.Println(rules)
+
+	var programmers []*programmer
+	fmt.Println(programmers)
+	programmers = programmers[:0]
+	fmt.Println(programmers)
 }
