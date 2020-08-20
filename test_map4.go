@@ -45,4 +45,9 @@ func main() {
 	fmt.Println(programmers)
 	programmers = programmers[:0]
 	fmt.Println(programmers)
+
+	fmt.Println("-----------------------------------")
+	for k := range rules {
+		fmt.Println(k)
+	}
 }

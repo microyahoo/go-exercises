@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 )
 
 func main() {
@@ -26,7 +27,13 @@ func main() {
 	var rules []*AlertRule
 	rules = append(rules, rule1, rule2, rule3, rule4)
 	fmt.Println(rules)
+	fmt.Printf("********insertionSort************\n")
 	insertionSort(rules)
+	fmt.Println(rules)
+	fmt.Printf("********Sort************\n")
+	sort.Slice(rules, func(i, j int) bool {
+		return AlertLevelMap[rules[i].Level] > AlertLevelMap[rules[j].Level]
+	})
 	fmt.Println(rules)
 
 	rulesMap := make(map[string]map[string]*AlertRule)
@@ -53,7 +60,73 @@ func main() {
 	fmt.Println(rulesMap)
 	infoRule.TriggerValue = "xxx"
 	fmt.Println(rulesMap)
+
+	var testMap = make(map[string]bool)
+	fmt.Println(testMap["x"])
+
+	fmt.Println("===============================================================\n")
+	rule1 = &AlertRule{
+		ResourceType: "osd",
+		Type:         "status",
+		Level:        AlertLevelInfo,
+		Group:        group,
+	}
+	rule2 = &AlertRule{
+		ResourceType: "osd",
+		Type:         "status",
+		Level:        AlertLevelCritical,
+		Group:        group,
+	}
+	rule3 = &AlertRule{
+		ResourceType: "osd",
+		Type:         "status",
+		Level:        AlertLevelWarning,
+		Group:        group,
+	}
+	rule4 = &AlertRule{
+		ResourceType: "osd",
+		Type:         "capacity",
+		Level:        AlertLevelError,
+		Group:        group,
+	}
+	rule5 := &AlertRule{
+		ResourceType: "osd",
+		Type:         "capacity",
+		Level:        AlertLevelWarning,
+		Group:        group,
+	}
+	fmt.Println("len(rules)= ", len(rules))
+	fmt.Println("cap(rules)= ", cap(rules))
+	rules = rules[:0]
+	fmt.Println("len(rules)= ", len(rules))
+	fmt.Println("cap(rules)= ", cap(rules))
+	rules = append(rules, rule1, rule2, rule3, rule4, rule5)
+	fmt.Println("len(rules)= ", len(rules))
+	fmt.Println("cap(rules)= ", cap(rules))
+
+	orderedAlertRuleMap := make(map[string][]*AlertRule)
+	allRules := rules[:]
+	for _, rule := range allRules {
+		key := alertRuleResourceTypeKey(rule)
+		_, ok := orderedAlertRuleMap[key]
+		if !ok {
+			orderedAlertRuleMap[key] = make([]*AlertRule, 0)
+		}
+		orderedAlertRuleMap[key] = append(orderedAlertRuleMap[key], rule)
+	}
+	for key, rules := range orderedAlertRuleMap {
+		insertionSort(rules)
+		orderedAlertRuleMap[key] = rules
+	}
+	for key, rules := range orderedAlertRuleMap {
+		fmt.Printf("key = %s, alerts = %#v\n", key, rules)
+		for _, rule := range rules {
+			fmt.Println("\t", rule)
+		}
+	}
 }
+
+func alertRuleResourceTypeKey(rule *AlertRule) string { return rule.ResourceType + "/" + rule.Type }
 
 // AlertRule defines the alert rule
 type AlertRule struct {
@@ -76,7 +149,7 @@ func (rule *AlertRule) String() string {
 func insertionSort(sl []*AlertRule) {
 	a, b := 0, len(sl)
 	for i := a + 1; i < b; i++ {
-		for j := i; j > a && AlertLevelMap[sl[j].Level] < AlertLevelMap[sl[j-1].Level]; j-- {
+		for j := i; j > a && AlertLevelMap[sl[j].Level] > AlertLevelMap[sl[j-1].Level]; j-- {
 			sl[j], sl[j-1] = sl[j-1], sl[j]
 		}
 	}

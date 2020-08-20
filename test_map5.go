@@ -1,7 +1,8 @@
 package main
 
 import (
-	log "github.com/Sirupsen/logrus"
+	"fmt"
+	"log"
 	"math/rand"
 	"os"
 	"os/signal"
@@ -9,8 +10,8 @@ import (
 )
 
 func main() {
-	log.Info("=== START ===")
-	defer func() { log.Info("=== DONE ===") }()
+	log.Println("=== START ===")
+	defer func() { log.Println("=== DONE ===") }()
 
 	go func() {
 		m := make(map[string]string)
@@ -25,15 +26,31 @@ func main() {
 		}
 	}()
 
+	var y *xx
+	x := getNil()
+	// y := (*xx)(x)
+	if x != nil {
+		fmt.Println("=====")
+		y = x.(*xx)
+	}
+	fmt.Println(y)
 	osSignals := make(chan os.Signal, 1)
 	signal.Notify(osSignals, os.Interrupt)
 	for {
 		select {
 		case <-osSignals:
-			log.Info("Recieved ^C command. Exit")
+			log.Println("Recieved ^C command. Exit")
 			return
 		}
 	}
+}
+
+type xx struct {
+	a, b string
+}
+
+func getNil() interface{} {
+	return nil
 }
 
 func generateRandStr(n int) string {

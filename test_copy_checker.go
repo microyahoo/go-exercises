@@ -21,6 +21,8 @@ func main() {
 	m.checker.check()
 	n := m
 	n.checker.check()
+
+	fmt.Println(strings.ReplaceAll("abacd", "ab", "x"))
 }
 
 type cond struct {
