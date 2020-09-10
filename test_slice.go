@@ -9,6 +9,8 @@ func main() {
 	s2 := []int{1, 2, 3}
 	s3 := []int{4, 5, 6, 7}
 	s4 := []int{1, 2, 3}
+	fmt.Println(s2[:])
+	fmt.Println(s3[:])
 	// 1、
 	n1 := copy(s1, s2)
 	fmt.Printf("n1=%d, s1=%v, s2=%v\n", n1, s1, s2)
