@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/sparrc/go-ping"
+	ping "github.com/sparrc/go-ping"
 )
 
 func main() {
