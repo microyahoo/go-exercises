@@ -47,7 +47,6 @@ func main() {
 		b.Put([]byte("my-key"), []byte("my-value"))
 		b.CreateBucketIfNotExists([]byte("sub-bucket"))
 		return nil
-
 	})
 
 	db.View(func(tx *bolt.Tx) error {
