@@ -6,8 +6,7 @@ import (
 	"math/rand"
 	"os"
 
-	"github.com/boltdb/bolt"
-	// bolt "go.etcd.io/bbolt"
+	bolt "go.etcd.io/bbolt"
 )
 
 func main() {
@@ -22,17 +21,47 @@ func main() {
 		if err != nil {
 			return err
 		}
-		d := make([]byte, 128)
+		k := make([]byte, 12)
+		v := make([]byte, 5120)
 
-		for i := 0; i < 10000; i += 1 {
-			n, err := rand.Read(d)
-			if n != 128 {
+		for i := 0; i < 1000; i += 1 {
+			n, err := rand.Read(k)
+			if n != 12 {
 				panic("bad len")
 			}
 			if err != nil {
 				return err
 			}
-			err = b.Put(d, d)
+			n, err = rand.Read(v)
+			if n != 5120 {
+				panic("bad len")
+			}
+			if err != nil {
+				return err
+			}
+			err = b.Put(k, v)
+			if err != nil {
+				return err
+			}
+		}
+		k = make([]byte, 2)
+		v = make([]byte, 20)
+		for i := 0; i < 1000; i += 1 {
+			n, err := rand.Read(k)
+			if n != 2 {
+				panic("bad len")
+			}
+			if err != nil {
+				return err
+			}
+			n, err = rand.Read(v)
+			if n != 20 {
+				panic("bad len")
+			}
+			if err != nil {
+				return err
+			}
+			err = b.Put(k, v)
 			if err != nil {
 				return err
 			}

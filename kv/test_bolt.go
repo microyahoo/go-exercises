@@ -5,14 +5,21 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"math/rand"
 	"os"
 	"strconv"
 	"time"
+	"unsafe"
 
 	bolt "go.etcd.io/bbolt"
 )
 
 func main() {
+	var ids []uint64
+	fmt.Println(unsafe.Sizeof(ids[0]))
+	fmt.Println(unsafe.Sizeof(ids[1]))
+	// fmt.Println(ids[0])
+
 	db, err := bolt.Open("/tmp/my.db", 0600, nil)
 	if err != nil {
 		log.Panic(err)
@@ -44,8 +51,43 @@ func main() {
 		if err != nil {
 			log.Panic(fmt.Errorf("create bucket: %s", err))
 		}
-		b.Put([]byte("my-key"), []byte("my-value"))
-		b.CreateBucketIfNotExists([]byte("sub-bucket"))
+		fmt.Println(b.Put([]byte("my-key"), []byte("my-value")))
+		subBucket, err := b.CreateBucketIfNotExists([]byte("sub-bucket"))
+		if err != nil {
+			log.Panic(fmt.Errorf("create sub bucket: %s", err))
+		}
+		err = subBucket.Put([]byte("key-hello"), []byte("value-hello"))
+		if err != nil {
+			log.Panic(fmt.Errorf("put key/value to sub bucket: %s", err))
+		}
+		err = subBucket.Put([]byte("key-hello2"), []byte("value-hello2"))
+		if err != nil {
+			log.Panic(fmt.Errorf("put key/value to sub bucket: %s", err))
+		}
+
+		k := make([]byte, 12)
+		v := make([]byte, 5120)
+
+		for i := 0; i < 10; i += 1 {
+			n, err := rand.Read(k)
+			if n != 12 {
+				panic("bad len")
+			}
+			if err != nil {
+				return err
+			}
+			n, err = rand.Read(v)
+			if n != 5120 {
+				panic("bad len")
+			}
+			if err != nil {
+				return err
+			}
+			err = b.Put(k, v)
+			if err != nil {
+				return err
+			}
+		}
 		return nil
 	})
 
