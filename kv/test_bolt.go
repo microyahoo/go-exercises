@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"log"
 	"math/rand"
-	"os"
+	// "os"
 	"strconv"
-	"time"
+	// "time"
 	"unsafe"
 
 	bolt "go.etcd.io/bbolt"
@@ -26,77 +26,80 @@ func main() {
 	}
 	defer db.Close()
 
-	go func() {
-		// Grab the initial stats.
-		prev := db.Stats()
+	// go func() {
+	// 	// Grab the initial stats.
+	// 	prev := db.Stats()
 
-		for {
-			// Wait for 10s.
-			time.Sleep(10 * time.Second)
+	// 	for {
+	// 		// Wait for 10s.
+	// 		time.Sleep(10 * time.Second)
 
-			// Grab the current stats and diff them.
-			stats := db.Stats()
-			diff := stats.Sub(&prev)
+	// 		// Grab the current stats and diff them.
+	// 		stats := db.Stats()
+	// 		diff := stats.Sub(&prev)
 
-			// Encode stats to JSON and print to STDERR.
-			json.NewEncoder(os.Stderr).Encode(diff)
+	// 		// Encode stats to JSON and print to STDERR.
+	// 		json.NewEncoder(os.Stderr).Encode(diff)
 
-			// Save stats for the next loop.
-			prev = stats
-		}
-	}()
+	// 		// Save stats for the next loop.
+	// 		prev = stats
+	// 	}
+	// }()
 
 	db.Update(func(tx *bolt.Tx) error {
-		b, err := tx.CreateBucketIfNotExists([]byte("MyBucket"))
-		if err != nil {
-			log.Panic(fmt.Errorf("create bucket: %s", err))
-		}
-		fmt.Println(b.Put([]byte("my-key"), []byte("my-value")))
-		subBucket, err := b.CreateBucketIfNotExists([]byte("sub-bucket"))
-		if err != nil {
-			log.Panic(fmt.Errorf("create sub bucket: %s", err))
-		}
-		err = subBucket.Put([]byte("key-hello"), []byte("value-hello"))
-		if err != nil {
-			log.Panic(fmt.Errorf("put key/value to sub bucket: %s", err))
-		}
-		err = subBucket.Put([]byte("key-hello2"), []byte("value-hello2"))
-		if err != nil {
-			log.Panic(fmt.Errorf("put key/value to sub bucket: %s", err))
-		}
+		for i := 0; i < 10; i++ {
+			b, err := tx.CreateBucketIfNotExists([]byte(fmt.Sprintf("%s-%d", "MyBucket", i)))
+			if err != nil {
+				log.Panic(fmt.Errorf("create bucket: %s", err))
+			}
+			b.Put([]byte("my-key"), []byte("my-value"))
+			// fmt.Println(b.Put([]byte("my-key"), []byte("my-value")))
+			subBucket, err := b.CreateBucketIfNotExists([]byte("sub-bucket"))
+			if err != nil {
+				log.Panic(fmt.Errorf("create sub bucket: %s", err))
+			}
+			err = subBucket.Put([]byte("key-hello"), []byte("value-hello"))
+			if err != nil {
+				log.Panic(fmt.Errorf("put key/value to sub bucket: %s", err))
+			}
+			err = subBucket.Put([]byte("key-hello2"), []byte("value-hello2"))
+			if err != nil {
+				log.Panic(fmt.Errorf("put key/value to sub bucket: %s", err))
+			}
 
-		k := make([]byte, 12)
-		v := make([]byte, 5120)
+			k := make([]byte, 12)
+			v := make([]byte, 5120)
 
-		for i := 0; i < 10; i += 1 {
-			n, err := rand.Read(k)
-			if n != 12 {
-				panic("bad len")
-			}
-			if err != nil {
-				return err
-			}
-			n, err = rand.Read(v)
-			if n != 5120 {
-				panic("bad len")
-			}
-			if err != nil {
-				return err
-			}
-			err = b.Put(k, v)
-			if err != nil {
-				return err
+			for i := 0; i < 10; i++ {
+				n, err := rand.Read(k)
+				if n != 12 {
+					panic("bad len")
+				}
+				if err != nil {
+					return err
+				}
+				n, err = rand.Read(v)
+				if n != 5120 {
+					panic("bad len")
+				}
+				if err != nil {
+					return err
+				}
+				err = b.Put(k, v)
+				if err != nil {
+					return err
+				}
 			}
 		}
 		return nil
 	})
 
-	db.View(func(tx *bolt.Tx) error {
-		b := tx.Bucket([]byte("MyBucket"))
-		v := b.Get([]byte("my-key"))
-		fmt.Printf("The answer is: %s\n", v)
-		return nil
-	})
+	// db.View(func(tx *bolt.Tx) error {
+	// 	b := tx.Bucket([]byte("MyBucket"))
+	// 	v := b.Get([]byte("my-key"))
+	// 	fmt.Printf("The answer is: %s\n", v)
+	// 	return nil
+	// })
 
 	db.Update(func(tx *bolt.Tx) error {
 		_, err := tx.CreateBucketIfNotExists([]byte("users"))
@@ -133,18 +136,18 @@ func main() {
 	// 	return nil
 	// })
 
-	fmt.Println("-----------------iterate users---------------------")
-	db.View(func(tx *bolt.Tx) error {
-		// Assume bucket exists and has keys
-		b := tx.Bucket([]byte("users"))
-		c := b.Cursor()
-		for k, v := c.First(); k != nil; k, v = c.Next() {
-			fmt.Printf("key=%v, value=%s\n", btoi(k), v)
-		}
-		return nil
-	})
+	// fmt.Println("-----------------iterate users---------------------")
+	// db.View(func(tx *bolt.Tx) error {
+	// 	// Assume bucket exists and has keys
+	// 	b := tx.Bucket([]byte("users"))
+	// 	c := b.Cursor()
+	// 	for k, v := c.First(); k != nil; k, v = c.Next() {
+	// 		fmt.Printf("key=%v, value=%s\n", btoi(k), v)
+	// 	}
+	// 	return nil
+	// })
 
-	select {}
+	// select {}
 
 }
 

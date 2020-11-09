@@ -6,8 +6,8 @@ import (
 	"math/rand"
 	"os"
 
-	"github.com/boltdb/bolt"
-	// bolt "go.etcd.io/bbolt"
+	// "github.com/boltdb/bolt"
+	bolt "go.etcd.io/bbolt"
 )
 
 func main() {

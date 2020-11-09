@@ -33,6 +33,7 @@ func main() {
 	pathName.TruncateAtFinalSlash()
 	fmt.Printf("%s\n", pathName)
 
+	// s := make([]int, 4)
 	s := make([]int, 0, 4)
 	fmt.Println(len(s))
 	fmt.Println(cap(s))
