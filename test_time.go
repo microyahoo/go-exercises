@@ -58,6 +58,7 @@ func main() {
 	fmt.Println(time.Now().UTC().Format("20190222T114211"))
 	fmt.Println(time.Now().UTC().Format(time.UnixDate))
 	fmt.Println(time.Now().UTC().Format(time.RFC3339))
+	fmt.Println(time.Now().Format(time.RFC3339))
 	fmt.Println(time.Now().UTC().Format(time.RFC3339Nano))
 	fmt.Println(time.Now())
 	fmt.Println(time.Now().UTC())
