@@ -13,7 +13,8 @@ var (
 	dbPath     = "test.db"
 	bucketName = "test"
 
-	numKeys = 100
+	numKeys = 2
+	// numKeys = 100
 
 	keyLen = 100
 	valLen = 750
@@ -35,7 +36,7 @@ func main() {
 	defer os.Remove(dbPath)
 
 	initMmapSize := 1 << 31 // 2GB
-	initMmapSize = 0        // comment this out to not block write
+	// initMmapSize = 0        // comment this out to not block write
 
 	var boltOpenOptions = &bolt.Options{InitialMmapSize: initMmapSize}
 
@@ -47,7 +48,7 @@ func main() {
 
 	fmt.Println("Creating bucket:", bucketName)
 	if err := db.Update(func(tx *bolt.Tx) error {
-		if _, err := tx.CreateBucket([]byte(bucketName)); err != nil {
+		if _, err := tx.CreateBucketIfNotExists([]byte(bucketName)); err != nil {
 			return err
 		}
 		return nil
@@ -68,21 +69,21 @@ func main() {
 	}()
 
 	fmt.Println("Starting writing...")
-	for {
-		for j := range keys {
-			tw := time.Now()
-			if err := db.Update(func(tx *bolt.Tx) error {
-				b := tx.Bucket([]byte(bucketName))
-				if err := b.Put(keys[j], vals[j]); err != nil {
-					return err
-				}
-				return nil
-			}); err != nil {
-				panic(err)
+	// for {
+	for j := range keys {
+		tw := time.Now()
+		if err := db.Update(func(tx *bolt.Tx) error {
+			b := tx.Bucket([]byte(bucketName))
+			if err := b.Put(keys[j], vals[j]); err != nil {
+				return err
 			}
-			fmt.Printf("#%d write took: %v\n", j, time.Since(tw))
+			return nil
+		}); err != nil {
+			panic(err)
 		}
+		fmt.Printf("#%d write took: %v\n", j, time.Since(tw))
 	}
+	// }
 }
 
 func randBytes(n int) []byte {
