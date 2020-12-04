@@ -16,8 +16,8 @@ const (
 )
 
 func main() {
-	path := "/home/admin/data/node1/etcd/10.255.101.74.etcd/member/wal/0000000000000001-000000000006c314.wal"
-	// path := "/Users/xsky/go/src/github.com/etcd-io/etcd/infra1.etcd/member/wal/0000000000000000-0000000000000000.wal"
+	// path := "/home/admin/data/node1/etcd/10.255.101.74.etcd/member/wal/0000000000000001-000000000006c314.wal"
+	path := "/Users/xsky/go/src/github.com/etcd-io/etcd/infra1.etcd/member/wal/0000000000000000-0000000000000000.wal"
 	f, err := os.OpenFile(path, os.O_RDONLY, PrivateFileMode)
 	if err != nil {
 		fmt.Println(err)

@@ -32,19 +32,25 @@ func main() {
 
 	c := pb.NewEchoClient(conn)
 
-	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Minute)
-	defer cancel()
+	// ctx, cancel := context.WithTimeout(context.Background(), 1*time.Minute)
+	// defer cancel()
+	ctx := context.Background()
 	fmt.Println("Performing unary request")
 	ticker := time.NewTicker(time.Second)
+	timeoutC := time.After(10 * time.Second)
 	defer ticker.Stop()
 	for {
 		select {
 		case <-ticker.C:
 			res, err := c.UnaryEcho(ctx, &pb.EchoRequest{Message: "keepalive demo"})
 			if err != nil {
-				log.Fatalf("unexpected error from UnaryEcho: %v", err)
+				log.Printf("unexpected error from UnaryEcho: %v", err)
+				// log.Fatalf("unexpected error from UnaryEcho: %v", err)
 			}
 			fmt.Println("RPC response:", res)
+		case <-timeoutC:
+			conn.Close()
+			// cancel()
 		}
 	}
 	// select {} // Block forever; run with GODEBUG=http2debug=2 to observe ping frames and GOAWAYs due to idleness.
