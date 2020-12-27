@@ -79,5 +79,7 @@ func main() {
 	createNode(11, node12)
 	createNode(12, node20)
 	fmt.Println(calculate(root, 0))
+	fmt.Println("--------------------------------------------")
+	fmt.Println("Tree")
 	fmt.Println(getString(root, "", true))
 }
