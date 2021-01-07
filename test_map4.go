@@ -10,8 +10,19 @@ type programmer struct {
 	language string
 }
 
+func getMap() map[string]int {
+	return nil
+}
+
 func main() {
-	mp := make(map[string]int)
+	var mp map[string]int
+	fmt.Println(mp == nil)
+	fmt.Println(mp["x"])
+	fmt.Println(getMap() == nil)
+	x, ok := getMap()["x"]
+	fmt.Println(x, ok)
+	fmt.Println(getMap()["x"])
+	mp = make(map[string]int)
 	mp["qcrao"] = 100
 	mp["stefno"] = 18
 
