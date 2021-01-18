@@ -124,6 +124,12 @@ func main() {
 			fmt.Println("\t", rule)
 		}
 	}
+
+	fmt.Println("===============================================================\n")
+	sl := []string{"abcdefghi", "abc", "abcdef"}
+	fmt.Println(sl)
+	sort.StringSlice(sl).Sort()
+	fmt.Println(sl)
 }
 
 func alertRuleResourceTypeKey(rule *AlertRule) string { return rule.ResourceType + "/" + rule.Type }
