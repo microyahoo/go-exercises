@@ -22,6 +22,8 @@ func main() {
 		}
 	}()
 
+	_ = http.FS
+
 	ticker := time.NewTicker(2 * time.Second)
 	defer ticker.Stop()
 
