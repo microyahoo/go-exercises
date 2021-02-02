@@ -77,7 +77,10 @@ func main() {
 	fmt.Println(unsafe.Sizeof([]int{}))
 	fmt.Println(unsafe.Sizeof([]byte{}))
 	// fmt.Println(unsafe.Sizeof(io.Writer))
-	// fmt.Println(unsafe.Sizeof(interface{}))
+	var xi interface{}
+	y := struct{}{}
+	fmt.Println(unsafe.Sizeof(xi))
+	fmt.Println(unsafe.Sizeof(y))
 
 	fmt.Println("-----------2------------")
 	u := new(user)
