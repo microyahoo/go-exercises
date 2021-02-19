@@ -40,9 +40,10 @@ func main() {
 		},
 		IP{[]string{"10.255.101.74", "10.255.101.75"}},
 	}
-	cfg := ini.Empty(ini.LoadOptions{
-		AllowShadows: true,
-	})
+	// cfg := ini.Empty(ini.LoadOptions{
+	// 	AllowShadows: true,
+	// })
+	cfg := ini.Empty()
 	err := ini.ReflectFrom(cfg, a)
 	if err != nil {
 		fmt.Println(err)
