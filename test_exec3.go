@@ -1,6 +1,6 @@
 package main
 
-//https://github.com/golang/go/issues/23019
+// https://github.com/golang/go/issues/23019
 
 import (
 	"bufio"
@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"os/exec"
 	"strings"
+	"sync"
 	"syscall"
-	// "testing"
 	"time"
 )
 
@@ -21,18 +21,19 @@ func main() {
 
 	stdoutPipe, err := cmd.StdoutPipe()
 	fmt.Println(err == nil)
-	// assert.Nil(t, err)
 	fmt.Println(stdoutPipe != nil)
-	// assert.NotNil(t, stdoutPipe)
 
 	start := time.Now()
 
 	err = cmd.Start()
 	fmt.Println(err == nil)
-	// assert.Nil(t, err)
 
+	var wg sync.WaitGroup
 	var stdout string
+
+	wg.Add(1)
 	go func() {
+		defer wg.Done()
 		buf := bufio.NewReader(stdoutPipe)
 		for {
 			line, err := buf.ReadString('\n')
@@ -40,28 +41,28 @@ func main() {
 				stdout = stdout + line + "\n"
 			}
 			if err != nil {
+				fmt.Println(err) // NOTE: read |0: file already closed
 				return
 			}
 		}
 	}()
 
+	// https://golang.org/pkg/os/exec/#Cmd.StdoutPipe
+	// Wait will close the pipe after seeing the command exit, so most callers need not close
+	// the pipe themselves. It is thus incorrect to call Wait before all reads from the pipe have completed.
 	err = cmd.Wait()
+	wg.Wait()
 	d := time.Since(start)
 
 	if err != nil {
 		exiterr, ok := err.(*exec.ExitError)
-		// require.True(t, ok)
 		fmt.Println(ok)
 		status, ok := exiterr.Sys().(syscall.WaitStatus)
-		// require.True(t, ok)
 		fmt.Println(ok)
-		// assert.NotEqual(t, 0, status.ExitStatus())
 		fmt.Println(0 != status.ExitStatus())
 	}
 	fmt.Println(stdout)
-	// assert.True(t, strings.HasPrefix(stdout, "hello world"), "Stdout: %v", stdout)
 	fmt.Println(strings.HasPrefix(stdout, "hello world"), "Stdout: ", stdout)
 
-	// assert.True(t, d.Seconds() < 3, "Duration was %v", d)
 	fmt.Println(d.Seconds() < 3, "Duration was: ", d)
 }
