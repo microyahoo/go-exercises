@@ -2,11 +2,15 @@ package main
 
 import (
 	"fmt"
+	"strings"
 	"unicode/utf8"
 	"unsafe"
 )
 
 func main() {
+	fmt.Println(strings.Title("Unknown Error"))
+	fmt.Println(strings.Title("badRequestMessage"))
+
 	const sample = "\xbd\xb2\x3d\xbc\x20\xe2\x8c\x98"
 
 	for _, iRune := range []rune(sample) {
