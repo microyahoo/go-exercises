@@ -10,6 +10,7 @@ import (
 func main() {
 	r, w := io.Pipe()
 
+	fmt.Println(int(^uint(0) >> 1))
 	go func() {
 		writer := bufio.NewWriter(w)
 		for i := 0; i < 3; i++ {
@@ -17,10 +18,11 @@ func main() {
 			writer.WriteString(time.Now().String() + "\n")
 			writer.Flush()
 		}
-		// writer.Close()
+		// w.Close()
 	}()
 	scanner := bufio.NewScanner(r)
 	for scanner.Scan() {
 		fmt.Println(scanner.Text())
 	}
+	// r.Close()
 }
