@@ -1,4 +1,5 @@
 // Command example runs a sample webserver that uses go-i18n/v2/i18n.
+// https://github.com/nicksnyder/go-i18n/tree/v2.1.2/v2/example
 package main
 
 import (
@@ -23,6 +24,15 @@ var page = template.Must(template.New("").Parse(`
 </html>
 `))
 
+type helloTest struct {
+	a int
+	b string
+}
+
+func (t *helloTest) String() string {
+	return fmt.Sprintf("helloTest[a=%d, b=%s]", t.a, t.b)
+}
+
 func main() {
 	bundle := i18n.NewBundle(language.English)
 	bundle.RegisterUnmarshalFunc("toml", toml.Unmarshal)
@@ -45,10 +55,14 @@ func main() {
 		helloPerson := localizer.MustLocalize(&i18n.LocalizeConfig{
 			DefaultMessage: &i18n.Message{
 				ID:    "HelloPerson",
-				Other: "Hello {{.Name}}",
+				Other: "Hello {{.Name}}, {{.i18n}}",
 			},
-			TemplateData: map[string]string{
+			TemplateData: map[string]interface{}{
 				"Name": name,
+				"i18n": &helloTest{
+					a: 1,
+					b: "hello",
+				},
 			},
 		})
 

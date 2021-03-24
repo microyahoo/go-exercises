@@ -35,6 +35,20 @@ func main() {
 	x = 970558111.491300
 	fmt.Println(int64(x / (1024 * 1024)))
 
+	var a, b, c bool
+	// c = true
+	for i := 0; i < 10; i++ {
+		switch {
+		case a, b, c:
+			fmt.Println("a, b or c: true")
+			break
+		default:
+			fmt.Println("default")
+			continue
+		}
+		fmt.Println("hello world")
+	}
+
 }
 
 func checkOsdAlertSent(alertValue string) bool {
