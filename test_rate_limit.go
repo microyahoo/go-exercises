@@ -1,3 +1,4 @@
+// https://pandaychen.github.io/2020/04/05/GOLANG-X-RATELIMIT-ANALYSIS/
 package main
 
 import (
@@ -77,6 +78,81 @@ func main() {
 
 	log.SetOutput(os.Stdout)
 	log.SetFlags(log.Ltime | log.LUTC)
+
+	tokensFromDuration := func(d time.Duration) float64 {
+		// Split the integer and fractional parts ourself to minimize rounding errors.
+		// See golang.org/issues/34861.
+		limit := 10
+		fmt.Println(d / time.Second)
+		fmt.Println(d % time.Second)
+		fmt.Println(float64(d%time.Second) / 1e9)
+		sec := float64(d/time.Second) * float64(limit)
+		nsec := float64(d%time.Second) * float64(limit)
+		return sec + nsec/1e9
+	}
+	durationFromTokens := func(tokens float64) time.Duration {
+		limit := 10
+		seconds := tokens / float64(limit)
+		return time.Nanosecond * time.Duration(1e9*seconds)
+	}
+	fmt.Println(tokensFromDuration(2*time.Second + 10*time.Millisecond))
+	fmt.Println(durationFromTokens(20.1))
+
+	fmt.Println("----------------------")
+	limiter := NewLimiter(Per(120, time.Minute), 10)
+	now := time.Now()
+	reserve1 := limiter.ReserveN(now, 8)
+	fmt.Printf("**%#v\n", reserve1)
+	fmt.Printf("reserve.Delay() = %s\n", reserve1.Delay())
+	fmt.Printf("reserve.timeToAct = %s\n", reserve1.timeToAct)
+	fmt.Printf("reserve.tokens = %d\n", reserve1.tokens)
+	fmt.Printf("reserve.lim.last = %s\n", reserve1.lim.last)
+	fmt.Printf("reserve.lim.tokens = %f\n", reserve1.lim.tokens)
+	fmt.Printf("reserve.lim.lastEvent = %s\n", reserve1.lim.lastEvent)
+	reserve2 := limiter.ReserveN(now, 8)
+	fmt.Printf("**%#v\n", reserve2)
+	fmt.Printf("reserve.Delay() = %s\n", reserve2.Delay())
+	fmt.Printf("reserve.timeToAct = %s\n", reserve2.timeToAct)
+	fmt.Printf("reserve.tokens = %d\n", reserve2.tokens)
+	fmt.Printf("reserve.lim.last = %s\n", reserve2.lim.last)
+	fmt.Printf("reserve.lim.tokens = %f\n", reserve2.lim.tokens)
+	fmt.Printf("reserve.lim.lastEvent = %s\n", reserve2.lim.lastEvent)
+	fmt.Println("----------------------")
+	reserve3 := limiter.ReserveN(now, 8)
+	fmt.Printf("**%#v\n", reserve3)
+	fmt.Printf("reserve.Delay() = %s\n", reserve3.Delay())
+	fmt.Printf("reserve.timeToAct = %s\n", reserve3.timeToAct)
+	fmt.Printf("reserve.tokens = %d\n", reserve3.tokens)
+	fmt.Printf("reserve.lim.last = %s\n", reserve3.lim.last)
+	fmt.Printf("reserve.lim.tokens = %f\n", reserve3.lim.tokens)
+	fmt.Printf("reserve.lim.lastEvent = %s\n", reserve3.lim.lastEvent)
+	fmt.Println("----------------------")
+	reserve4 := limiter.ReserveN(now, 6)
+	// reserve4 := limiter.ReserveN(now, 10)
+	fmt.Printf("**%#v\n", reserve4)
+	fmt.Printf("reserve.Delay() = %s\n", reserve4.Delay())
+	fmt.Printf("reserve.timeToAct = %s\n", reserve4.timeToAct)
+	fmt.Printf("reserve.tokens = %d\n", reserve4.tokens)
+	fmt.Printf("reserve.lim.last = %s\n", reserve4.lim.last)
+	fmt.Printf("reserve.lim.tokens = %f\n", reserve4.lim.tokens)
+	fmt.Printf("reserve.lim.lastEvent = %s\n", reserve4.lim.lastEvent)
+	fmt.Println("----------------------")
+	reserve3.Cancel()
+	fmt.Printf("reserve.Delay() = %s\n", reserve3.Delay())
+	fmt.Printf("reserve.timeToAct = %s\n", reserve3.timeToAct)
+	fmt.Printf("reserve.tokens = %d\n", reserve3.tokens)
+	fmt.Printf("reserve.lim.last = %s\n", reserve3.lim.last)
+	fmt.Printf("reserve.lim.tokens = %f\n", reserve3.lim.tokens)
+	fmt.Printf("reserve.lim.lastEvent = %s\n", reserve3.lim.lastEvent)
+	fmt.Println("----------------------")
+	reserve4.Cancel()
+	fmt.Printf("reserve.Delay() = %s\n", reserve4.Delay())
+	fmt.Printf("reserve.timeToAct = %s\n", reserve4.timeToAct)
+	fmt.Printf("reserve.tokens = %d\n", reserve4.tokens)
+	fmt.Printf("reserve.lim.last = %s\n", reserve4.lim.last)
+	fmt.Printf("reserve.lim.tokens = %f\n", reserve4.lim.tokens)
+	fmt.Printf("reserve.lim.lastEvent = %s\n", reserve4.lim.lastEvent)
+	fmt.Println("----------------------")
 
 	apiConnection := Open()
 	var wg sync.WaitGroup
@@ -265,6 +341,7 @@ func (r *Reservation) CancelAt(now time.Time) {
 	// The duration between lim.lastEvent and r.timeToAct tells us how many tokens were reserved
 	// after r was obtained. These tokens should not be restored.
 	restoreTokens := float64(r.tokens) - r.limit.tokensFromDuration(r.lim.lastEvent.Sub(r.timeToAct))
+	fmt.Printf("***##restoreTokens = %f\n", restoreTokens)
 	if restoreTokens <= 0 {
 		return
 	}

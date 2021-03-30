@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"log"
+	"net/http"
+	_ "net/http/pprof"
 	"os"
 	"time"
 )
@@ -14,8 +16,10 @@ func take(done <-chan interface{}, valueStream <-chan interface{}, num int) <-ch
 	go func() {
 		defer close(takeStream)
 		for i := 0; i < num; i++ {
+			fmt.Printf("%#v\n", valueStream)
 			select {
 			case <-done:
+				fmt.Println("return 4")
 				return
 			case takeStream <- <-valueStream:
 			}
@@ -121,6 +125,7 @@ func doWorkFn(done <-chan interface{}, intList ...int) (startGoroutineFn, <-chan
 			fmt.Println("1")
 			select {
 			case <-done:
+				fmt.Println("return 1")
 				return
 			case intChanStream <- intStream:
 			}
@@ -146,6 +151,7 @@ func doWorkFn(done <-chan interface{}, intList ...int) (startGoroutineFn, <-chan
 						case intStream <- intVal:
 							continue valueLoop
 						case <-done:
+							fmt.Println("return 2")
 							return
 						}
 					}
@@ -193,6 +199,7 @@ func newSteward(timeout time.Duration, startGoroutine startGoroutineFn) startGor
 						startWard()
 						continue monitorLoop
 					case <-done:
+						fmt.Println("return 3")
 						return
 					}
 				}
@@ -203,6 +210,10 @@ func newSteward(timeout time.Duration, startGoroutine startGoroutineFn) startGor
 }
 
 func main() {
+	go func() {
+		log.Println(http.ListenAndServe("localhost:6060", nil))
+	}()
+
 	log.SetOutput(os.Stdout)
 	log.SetFlags(log.Ltime | log.LUTC)
 
@@ -232,8 +243,8 @@ func main() {
 
 	doWork, intStream := doWorkFn(done2, 1, 2, -1, 3, 4, 5)
 	doWorkWithSteward = newSteward(1*time.Millisecond, doWork)
-	doWorkWithSteward(done2, 1*time.Hour)
-	for intVal := range take(done2, intStream, 6) {
+	doWorkWithSteward(done, 1*time.Hour)
+	for intVal := range take(done, intStream, 6) {
 		fmt.Printf("Received: %v\n", intVal)
 	}
 }

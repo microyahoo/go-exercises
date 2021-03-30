@@ -10,6 +10,7 @@ func main() {
 	s3 := []int{4, 5, 6, 7}
 	s4 := []int{1, 2, 3}
 	fmt.Println(s2[:])
+	fmt.Println(s2[:len(s2)-1])
 	fmt.Println(s3[:])
 	// 1、
 	n1 := copy(s1, s2)
