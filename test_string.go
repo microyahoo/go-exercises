@@ -9,6 +9,8 @@ import (
 )
 
 func main() {
+	str := `ceph\/pool-b7ce68dce9e7444a83b1d273517a7420\/volume-393e2cd5a04a4271a3b9fa12aff6498a`
+	fmt.Println(strings.Split(str, "/"))
 	fmt.Println(strings.Split("network__addresses", "__"))
 	fmt.Println(0x7FFFFFF)
 
