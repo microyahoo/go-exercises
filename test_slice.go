@@ -6,10 +6,21 @@ import (
 
 func main() {
 	var s1 []int
+	s1 = append(s1, 2)
+	fmt.Println(s1)
+	i := 100
+	if i > 10 {
+		fmt.Printf("%d > 10\n", i)
+	} else if i > 20 {
+		fmt.Printf("%d > 20\n", i)
+	} else if i > 30 {
+		fmt.Printf("%d > 30\n", i)
+	}
 	s2 := []int{1, 2, 3}
 	s3 := []int{4, 5, 6, 7}
 	s4 := []int{1, 2, 3}
 	fmt.Println(s2[:])
+	fmt.Println(s2[:len(s2)-1])
 	fmt.Println(s3[:])
 	// 1、
 	n1 := copy(s1, s2)
