@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"reflect"
+	"runtime"
 	"unsafe"
 )
 
@@ -37,6 +38,8 @@ func main() {
 	fmt.Println(len(bs))
 	// bs[len(bs)-1] = 1
 	// fmt.Println(len(bs))
+
+	fmt.Println(runtime.NumCPU())
 
 	var x byte
 	fmt.Println(unsafe.Sizeof(x))

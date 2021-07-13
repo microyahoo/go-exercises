@@ -52,6 +52,14 @@ func (d *poolDequeue) push(val interface{}) {
 	d.head = (head + 1) % (uint32(len(d.vals)) - 1)
 }
 
+func interfaceIsNil(x interface{}) {
+	if x == nil {
+		fmt.Println("empty interface")
+		return
+	}
+	fmt.Println("non-empty interface")
+}
+
 func main() {
 	user := &User{
 		Name:  "janet jones",
@@ -67,7 +75,7 @@ func main() {
 	admin.Notify()
 	fmt.Println(admin.Print())
 
-	fmt.Println("\n\n")
+	fmt.Printf("\n\n")
 	const initSize = 8
 	queue := new(poolDequeue)
 	queue.vals = make([]eface, initSize)
@@ -76,5 +84,10 @@ func main() {
 	queue.push(1)
 	queue.push(23.1)
 	fmt.Printf("%#v\n", queue)
-	fmt.Printf("%#v, %#v", queue.vals[0].typ, queue.vals[0].val)
+	fmt.Printf("%#v, %#v\n\n", queue.vals[0].typ, queue.vals[0].val)
+
+	var x interface{} = nil
+	var y *int = nil
+	interfaceIsNil(x)
+	interfaceIsNil(y)
 }

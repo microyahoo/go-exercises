@@ -24,6 +24,17 @@ func hello3(i *int) (j int) {
 	return *i
 }
 
+func hello4() {
+	i := 0
+	defer func() {
+		fmt.Println(i)
+	}()
+	i++
+	defer func() {
+		fmt.Println(i)
+	}()
+}
+
 func main() {
 	i := 10
 	j := hello1(&i)
@@ -36,4 +47,7 @@ func main() {
 	i = 10
 	j = hello3(&i)
 	fmt.Println(i, j)
+
+	fmt.Println("========================")
+	hello4()
 }

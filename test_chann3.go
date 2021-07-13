@@ -10,6 +10,8 @@ func main() {
 		chann chan []byte
 	)
 	chann = make(chan []byte)
+	close(chann)
+	chann <- []byte{1}
 
 	go func(ch chan []byte) {
 		x := <-ch
