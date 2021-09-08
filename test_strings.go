@@ -123,6 +123,13 @@ func main() {
 	fmt.Printf("%b\n", ru)
 	fmt.Println(size)
 
+	fmt.Println("---------------split----------")
+	fmt.Println(strings.SplitN("a/b/c/d/e/f", "/", 3))
+	fmt.Println(strings.SplitN("a/b", "/", 3))
+	fmt.Println(len(strings.SplitN("a/b", "/", 3)))
+	fmt.Println(strings.TrimPrefix("//x/y", "/"))
+	fmt.Println(strings.TrimLeft("//x/y", "/"))
+
 }
 
 // Println:
