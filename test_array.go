@@ -61,4 +61,8 @@ func main() {
 	size := 1 << 40
 	fmt.Println(size % step)
 	fmt.Println(100 % step)
+
+	s := ints{4, 1, 8, 10, 3, 2}
+	sort.Sort(s)
+	fmt.Println(s)
 }
