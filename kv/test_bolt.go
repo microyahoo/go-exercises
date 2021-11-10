@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"math/rand"
+
 	// "os"
 	"strconv"
 	// "time"
@@ -67,25 +68,26 @@ func main() {
 				log.Panic(fmt.Errorf("put key/value to sub bucket: %s", err))
 			}
 
-			k := make([]byte, 12)
+			// k := make([]byte, 12)
 			v := make([]byte, 5120)
 
 			for i := 0; i < 10; i++ {
-				n, err := rand.Read(k)
-				if n != 12 {
-					panic("bad len")
-				}
-				if err != nil {
-					return err
-				}
-				n, err = rand.Read(v)
+				// n, err := rand.Read(k)
+				// if n != 12 {
+				// 	panic("bad len")
+				// }
+				// if err != nil {
+				// 	return err
+				// }
+				n, err := rand.Read(v)
 				if n != 5120 {
 					panic("bad len")
 				}
 				if err != nil {
 					return err
 				}
-				err = b.Put(k, v)
+				err = b.Put(itob(uint64(i)), v)
+				// err = b.Put(k, v)
 				if err != nil {
 					return err
 				}
