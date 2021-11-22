@@ -56,4 +56,10 @@ func main() {
 
 	myAppendPtr(&s)
 	fmt.Println(s)
+
+	fmt.Println("------------------------------------------------------------")
+	x := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	fmt.Printf("x = %v\n", x)
+	fmt.Printf("x[8:] = %v\n", x[8:])
+	fmt.Printf("x[5:8] = %v\n", x[5:8])
 }

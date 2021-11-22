@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math/rand"
 	"os"
+	"sync"
 	"time"
 
 	bolt "go.etcd.io/bbolt"
@@ -57,17 +58,39 @@ func main() {
 	}
 	fmt.Println("Done with creating bucket:", bucketName)
 
+	wg := sync.WaitGroup{}
+	wg.Add(1)
+
+	waitC := make(chan struct{})
+	waitC2 := make(chan struct{})
+
 	fmt.Println("Starting reading...")
 	go func() {
-		_, err := db.Begin(false)
+		var tx *bolt.Tx
+		defer wg.Done()
+
+		tx, err = db.Begin(false)
 		if err != nil {
 			panic(err)
 		}
+		fmt.Printf("tx.Stats=%#v\n", tx.Stats())
+		defer tx.Rollback()
+
+		waitC <- struct{}{}
+		<-waitC2
+
 		fmt.Println("before select")
-		select {}
+		select {
+		case <-time.After(5 * time.Second):
+		}
+		b := tx.Bucket([]byte(bucketName))
+		for j := range keys {
+			fmt.Println(b.Get(keys[j]))
+		}
 		fmt.Println("after select")
 	}()
 
+	<-waitC
 	fmt.Println("Starting writing...")
 	// for {
 	for j := range keys {
@@ -82,8 +105,27 @@ func main() {
 			panic(err)
 		}
 		fmt.Printf("#%d write took: %v\n", j, time.Since(tw))
+
+		fmt.Printf("view buckets\n")
+		if err := db.View(func(tx *bolt.Tx) error {
+			b := tx.Bucket([]byte(bucketName))
+			for j := range keys {
+				vals := b.Get(keys[j])
+				// if len(vals) != 0 {
+				fmt.Printf("len(vals) = %d\n", len(vals))
+				// } else {
+				// 	fmt.Println(vals)
+				// }
+			}
+			return nil
+		}); err != nil {
+			panic(err)
+		}
+		fmt.Printf("view buckets end\n")
 	}
+	waitC2 <- struct{}{}
 	// }
+	wg.Wait()
 }
 
 func randBytes(n int) []byte {
