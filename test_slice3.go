@@ -62,4 +62,13 @@ func main() {
 	fmt.Printf("x = %v\n", x)
 	fmt.Printf("x[8:] = %v\n", x[8:])
 	fmt.Printf("x[5:8] = %v\n", x[5:8])
+	fmt.Printf("x[:8] = %v, cap(x[:8]) = %d\n", x[:8], cap(x[:8]))
+	fmt.Printf("x[:8:8] = %v, cap(x[:8:8]) = %d\n", x[:8:8], cap(x[:8:8]))
+
+	y := make([]int, 1)
+	y = append(y, 1, 2)
+	fmt.Println(y, len(y), cap(y))
+
+	var sl [7]uint64
+	fmt.Printf("len([7]int) = %d\n", len(sl))
 }
