@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 func main() {
 	indices := []int64{0, 0xc41e9b, 0xc445ac, 0xc46cbd, 0xc493ce, 0xc4badf}
@@ -15,6 +18,22 @@ func main() {
 			i++
 		}
 	}
+
+	fmt.Printf("14488752894282421173 = %x\n", uint64(14488752894282421173))
+	fmt.Printf("5032027080688003127 = %x\n", uint64(5032027080688003127))
+	fmt.Printf("18249187646912138824 = %x\n", uint64(18249187646912138824))
+	fmt.Printf("10501334649042878790 = %x\n", uint64(10501334649042878790))
+	fmt.Printf("9372538179322589801 = %x\n", uint64(9372538179322589801))
+	fmt.Printf("7044390442471271841 = %x\n", uint64(7044390442471271841))
+	fmt.Printf("0xf4e = %d\n", uint64(0xf4e))
+	fmt.Printf("13939 = %x\n", uint64(13939))
+	fmt.Printf("%d = 0x%x\n", uint64(0x3868), 0x3868)
+	fmt.Printf("%d = 0x%x\n", uint64(0x3a5d), 0x3a5d)
+	fmt.Printf("%d = 0x%x\n", uint64(0x59ad), 0x59ad)
+	fmt.Printf("%d = 0x%x\n", uint64(0x5ba2), 0x5ba2)
+	fmt.Printf("%d = 0x%x\n", uint64(0x5d82), 0x5d82)
+
+	os.Rename("1", "2")
 }
 
 // (.venv) /root ☞ tree -h /var/lib/etcd/
