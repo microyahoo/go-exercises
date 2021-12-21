@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"log"
 	"sync"
@@ -10,6 +11,10 @@ func main() {
 	m := NewMemoryStorage()
 	fmt.Printf("first index: %d\n", m.FirstIndex())
 	fmt.Printf("last index: %d\n", m.LastIndex())
+	fmt.Println("Print entries:")
+	for _, e := range m.ents {
+		fmt.Printf("\t%#v\n", e)
+	}
 
 	peers := 5
 	ents := make([]Entry, peers)
@@ -22,8 +27,20 @@ func main() {
 	}
 	fmt.Printf("after append entries, first index: %d\n", m.FirstIndex())
 	fmt.Printf("after append entries, last index: %d\n", m.LastIndex())
+	fmt.Println("Print entries:")
+	for _, e := range m.ents {
+		fmt.Printf("\t%#v\n", e)
+	}
+
+	m.Compact(3)
+	fmt.Println("After compact, print entries:")
+	for _, e := range m.ents {
+		fmt.Printf("\t%#v\n", e)
+	}
 
 }
+
+var ErrCompacted = errors.New("requested index is unavailable due to compaction")
 
 // EntryType describes entry type
 type EntryType int32
@@ -120,5 +137,25 @@ func (ms *MemoryStorage) Append(entries []Entry) error {
 		log.Panicf("missing log entry [last: %d, append at: %d]",
 			ms.lastIndex(), entries[0].Index)
 	}
+	return nil
+}
+
+func (ms *MemoryStorage) Compact(compactIndex uint64) error {
+	ms.Lock()
+	defer ms.Unlock()
+	offset := ms.ents[0].Index
+	if compactIndex <= offset {
+		return ErrCompacted
+	}
+	if compactIndex > ms.lastIndex() {
+		log.Panic(fmt.Sprintf("compact %d is out of bound lastindex(%d)", compactIndex, ms.lastIndex()))
+	}
+
+	i := compactIndex - offset
+	ents := make([]Entry, 1, 1+uint64(len(ms.ents))-i)
+	ents[0].Index = ms.ents[i].Index
+	ents[0].Term = ms.ents[i].Term
+	ents = append(ents, ms.ents[i+1:]...)
+	ms.ents = ents
 	return nil
 }
