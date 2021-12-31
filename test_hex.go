@@ -32,6 +32,8 @@ func main() {
 	fmt.Printf("%d = 0x%x\n", uint64(0x59ad), 0x59ad)
 	fmt.Printf("%d = 0x%x\n", uint64(0x5ba2), 0x5ba2)
 	fmt.Printf("%d = 0x%x\n", uint64(0x5d82), 0x5d82)
+	fmt.Printf("%d = 0x%x\n", uint64(0x32697dff1a127f04), 0x32697dff1a127f04)
+	fmt.Printf("%d = 0x%x\n", uint64(0x32697dfb4680e707), 0x32697dfb4680e707)
 
 	os.Rename("1", "2")
 }
