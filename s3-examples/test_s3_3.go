@@ -8,32 +8,16 @@ import (
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/credentials"
-	"github.com/aws/aws-sdk-go-v2/feature/s3/manager"
 	"github.com/aws/aws-sdk-go-v2/service/s3"
 	// "github.com/aws/aws-sdk-go-v2/feature/s3/manager"
 )
 
 func main() {
 	const (
-		// accessKey = "8EUE3A2L1KKQRMPTR79S"
-		// secretKey = "GvMG155EfuT2E4DscaEm5bh9vbjZHLDMw5sTdQcJ"
-		// bucket    = "zhengliang-test"
-		// endpoint  = "http://10.3.8.32:80"
-
-		// accessKey = "minioadmin"
-		// secretKey = "minioadmin"
-		// bucket    = "bucket"
-		// endpoint  = "http://10.24.32.220:9000"
-
-		// accessKey = "test"
-		// secretKey = "test1"
-		// bucket    = "zhengliang"
-		// endpoint  = "http://10.9.8.72:80"
-
-		accessKey = "CITSRGRDIGAZF7KO6LXA"
-		secretKey = "hq5uc45HdISk6euyNwPDaXX7PpUzHzrRvVuAts3N"
-		bucket    = "01160027"
-		endpoint  = "http://10.9.8.113:7480"
+		accessKey = "testy"
+		secretKey = "testy"
+		bucket    = "test"
+		endpoint  = "http://10.9.8.95:80"
 	)
 	appCreds := aws.NewCredentialsCache(credentials.NewStaticCredentialsProvider(
 		accessKey, secretKey, ""))
@@ -88,46 +72,6 @@ func main() {
 		}
 	}
 	fmt.Println("total objects:", totalObjects, ", key size: ", len(keys))
-
-	mgr := manager.NewDownloader(client, func(mgr *manager.Downloader) {
-		mgr.PartSize = 30 * 1024 * 1024
-	})
-	// buf := make([]byte, int(headObject.ContentLength))
-	// w := manager.NewWriteAtBuffer(buf)
-	for _, key := range keys {
-		obj, err := client.GetObject(context.TODO(), &s3.GetObjectInput{
-			Bucket: aws.String(bucket),
-			Key:    aws.String(key),
-		})
-		if err != nil {
-			log.Fatal(err)
-		}
-		_ = obj.Body
-		head, err := client.HeadObject(context.TODO(), &s3.HeadObjectInput{
-			Bucket: aws.String(bucket),
-			Key:    aws.String(key),
-		})
-		if err != nil {
-			log.Fatal(err)
-		}
-		length := head.ContentLength
-		buf := make([]byte, length)
-		w := manager.NewWriteAtBuffer(buf)
-		log.Printf("key: %s, content type: %s, content length: %d", key, *head.ContentType, length)
-		if length == 0 {
-			fmt.Println("****")
-			n, err := mgr.Download(context.Background(), w, &s3.GetObjectInput{
-				Bucket: aws.String(bucket),
-				Key:    aws.String(key),
-			})
-			if err != nil {
-				log.Fatal(err)
-			}
-			log.Printf("##****download %d", n)
-			break
-		}
-	}
-
 }
 
 // https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/transfer/s3/internal/DefaultS3TransferManager.html

@@ -43,4 +43,7 @@ func main() {
 
 	// s := "abcdefg"
 	// fmt.Println(s[-1:])
+
+	tmp := []string{"a"}
+	fmt.Println(append(tmp[:0], tmp[1:]...))
 }

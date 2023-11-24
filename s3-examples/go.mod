@@ -11,6 +11,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/s3 v1.30.0
 	github.com/gofrs/uuid v4.2.0+incompatible
 	github.com/mitchellh/hashstructure v1.1.0
+	github.com/opencontainers/go-digest v1.0.0
 	k8s.io/apimachinery v0.26.0
 )
 

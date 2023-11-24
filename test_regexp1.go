@@ -215,6 +215,11 @@ func main() {
 		fmt.Println(err)
 	}
 	fmt.Println(duration)
+
+	fmt.Println("---------------4---------------")
+	matched, err := regexp.MatchString(`([\d]+):([\d]+):([\d]+):([\d]+)`, "[16:1:0:0]")
+	fmt.Println(matched, err)
+
 }
 
 func test_once() {
