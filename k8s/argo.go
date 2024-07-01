@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"encoding/json"
+	"strings"
 	"time"
 
 	wfv1 "github.com/argoproj/argo-workflows/v3/pkg/apis/workflow/v1alpha1"
@@ -72,6 +73,9 @@ func main() {
 				wf, err := fromUnstructured(un)
 				muste(err)
 				klog.Infof("receive add event: %s/%s", wf.Namespace, wf.Name)
+				if strings.Contains(wf.Name, "checker2sm5d") {
+					panic("found checker2sm5d")
+				}
 			},
 			UpdateFunc: func(_, obj interface{}) {
 				key, err := cache.MetaNamespaceKeyFunc(obj)
