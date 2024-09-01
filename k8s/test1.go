@@ -63,6 +63,27 @@ func main() {
 	// 等待同步完成
 	sharedInformerFactory.WaitForCacheSync(stopCh)
 
+	// 添加Event事件处理函数
+	informer.AddEventHandler(cache.ResourceEventHandlerFuncs{
+		AddFunc: func(obj interface{}) {
+			podObj := obj.(*corev1.Pod)
+
+			fmt.Printf("AddFunc**: %s\n", podObj.GetName())
+
+		},
+		UpdateFunc: func(oldObj, newObj interface{}) {
+			oldPodObj := oldObj.(*corev1.Pod)
+			newPodObj := newObj.(*corev1.Pod)
+
+			fmt.Printf("old**: %s\n", oldPodObj.GetName())
+			fmt.Printf("new**: %s\n", newPodObj.GetName())
+
+		},
+		DeleteFunc: func(obj interface{}) {
+			podObj := obj.(*corev1.Pod)
+			fmt.Printf("deleteFunc**: %s\n", podObj.GetName())
+		},
+	})
 	// 利用 indexer 获取资源
 	pods, err := indexer.List(labels.Everything())
 	Muste(err)
