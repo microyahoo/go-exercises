@@ -39,7 +39,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	file, err := os.OpenFile("deeproute-blc-ddl-test-dev_5.6.99__deeproute-blc-dev_5.8.12", os.O_RDONLY, 0644)
+	file, err := os.OpenFile("bbbbbb", os.O_RDONLY, 0644)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -51,7 +51,7 @@ func main() {
 	// put object
 	poo, err := client.PutObject(context.Background(), &s3.PutObjectInput{
 		Bucket: aws.String(bucket),
-		Key:    aws.String("test"),
+		Key:    aws.String("bbbbbb"),
 		Body:   file,
 	})
 	if err != nil {

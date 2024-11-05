@@ -10,7 +10,7 @@ import (
 
 func main() {
 	opts := argos3.S3ClientOpts{
-		Endpoint:        "s3.deeproute.cn:80",
+		Endpoint:        "10.9.8.72:80",
 		Region:          "us-east-1",
 		Secure:          false,
 		AccessKey:       "testy",
