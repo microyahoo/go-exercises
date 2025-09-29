@@ -69,10 +69,10 @@ func main() {
 		endpoint  = "http://10.3.9.221:80"
 	)
 
-	keys := []string{"1k", "4k", "8k", "16k", "32k", "64k", "128k", "256k", "512k"}
+	keys := []string{"1k", "1k", "1k", "4k", "8k", "16k", "32k", "64k", "128k", "256k", "512k"}
+	client := createS3Client(accessKey, secretKey, endpoint)
 	size := int64(1024 * 1)
 	for i, key := range keys {
-		client := createS3Client(accessKey, secretKey, endpoint)
 		ctx := context.Background()
 		result, err := client.GetObject(ctx, &s3.GetObjectInput{
 			Bucket: &bucket,
@@ -92,9 +92,9 @@ func main() {
 		if numBytes != size {
 			log.Fatalf("size %d not match", numBytes)
 		}
-		if i == 0 {
+		if i == 2 {
 			size *= 4
-		} else {
+		} else if i > 2 {
 			size *= 2
 		}
 	}

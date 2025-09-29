@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	"github.com/opencontainers/go-digest"
+	"k8s.io/apimachinery/pkg/api/resource"
 )
 
 type DiffID digest.Digest
@@ -44,6 +45,10 @@ func main() {
 		"sha256:8e1349c4476850d9312afb11ad815eb66ae86d6d86f70cb8e8647153e5aa48ab",
 	}
 	fmt.Println(CreateChainID(diffIDs)) // sha256:31a12eef15201b21bdf74385eff4e3100c3e6fcc6c3e5eaeabd359684be7891c
+
+	q, err := resource.ParseQuantity("-1")
+	fmt.Println("Parse -1:", err) // 输出错误
+	fmt.Println("quantiry: ", q)
 }
 
 // moby layer/layer.go
