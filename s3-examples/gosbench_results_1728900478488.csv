@@ -1,0 +1,10 @@
+type,object-size(KB),workers,parallel-clients,avg-bandwidth(MB/s),avg-latency(ms),gen-bytes-avg-latency(ms),io-copy-avg-latency(ms),successful-ops,failed-ops,duration(s),total-mbytes,name
+delete,4096,10,16,0.0,4.03,-1.00,-1.00,100000,0,13s,0,clean-4m-16threads
+delete,4096,10,32,0.0,5.57,-1.00,-1.00,100000,0,13s,0,clean-4m-32threads
+delete,4096,10,64,0.0,9.36,-1.00,-1.00,100000,0,12s,0,clean-4m-64threads
+read,4096,10,16,25061.3,25.00,-1.00,2.18,100000,0,26s,400000,read-4m-16threads
+read,4096,10,32,28317.2,44.28,-1.00,2.23,100000,0,24s,400000,read-4m-32threads
+read,4096,10,64,29737.9,84.59,-1.00,2.22,100000,0,24s,400000,read-4m-64threads
+write,4096,10,16,15580.1,33.35,6.68,-1.00,100000,0,36s,400000,write-4m-16threads
+write,4096,10,32,22821.2,49.13,5.90,-1.00,100000,0,28s,400000,write-4m-32threads
+write,4096,10,64,26258.8,90.63,5.52,-1.00,100000,0,26s,400000,write-4m-64threads

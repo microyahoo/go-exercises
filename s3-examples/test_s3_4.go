@@ -13,10 +13,10 @@ import (
 
 func main() {
 	const (
-		accessKey = "JBWLI7FTQ0C1TDUCOBN5"
-		secretKey = "bSqScjp2DH5bM5377oVczQVlcSnP26zoXwnMnGYT"
-		bucket    = "deeproute-zip-packages"
-		endpoint  = "http://10.3.9.141:80"
+		accessKey = "CHHIEDO3WL59C6JPDA05"
+		secretKey = "kpLoIuou06K7OlBgmuUVPibJsC97lVCRub8a2AQI"
+		bucket    = "argo-workflow-artifacts"
+		endpoint  = "http://10.3.8.34:80"
 	)
 	appCreds := aws.NewCredentialsCache(credentials.NewStaticCredentialsProvider(
 		accessKey, secretKey, ""))
@@ -42,11 +42,14 @@ func main() {
 		o.UsePathStyle = true
 	})
 
-	key := "deeproute-release-2004/driver/PACKAGE_NAME_3.20.0_arm64.zip"
+	key := "localization-benchmark-v2-12752-1760420800/localization-benchmark-v2-12752-1760420800-single-2536172718/main.log"
 	output, err := client.HeadObject(context.TODO(), &s3.HeadObjectInput{
 		Bucket: aws.String(bucket),
 		Key:    aws.String(key),
 	})
+	if err != nil {
+		log.Fatal(err)
+	}
 	log.Printf("head object: %+v\n, %s", output, *output.ETag)
 
 	params := &s3.GetObjectAttributesInput{

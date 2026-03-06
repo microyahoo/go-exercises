@@ -1,0 +1,40 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gosbench-server
+  # namespace: gosbench
+  labels:
+    app: gosbench-server
+    stack: gosbench
+    type: server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gosbench-server
+  template:
+    metadata:
+      labels:
+        app: gosbench-server
+        stack: gosbench
+        type: server
+    spec:
+      hostNetwork: true
+      containers:
+        - name: gobench-server
+          image: reg.deeproute.ai/deeproute-public/tools/gosbench-server:tmp # need update
+          imagePullPolicy: Always
+          # image: ubuntu
+          # imagePullPolicy: IfNotPresent
+          # command: ["/bin/bash", "-c", "--"]
+          # args: [ "while true; do sleep 30; done;" ]
+          env:
+          - name: CONFIGFILE
+            value: "/config/config.yaml"
+          - name: SERVERPORT
+            value: "2000"
+          - name: DEBUG
+            value: "true"
+          - name: TRACE
+            value: "true"
