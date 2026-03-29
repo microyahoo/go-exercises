@@ -15,7 +15,7 @@ require (
 	go.etcd.io/bbolt v1.3.5
 	go.etcd.io/etcd/client/v3 v3.5.1
 	go.uber.org/zap v1.19.1
-	golang.org/x/net v0.0.0-20210428140749-89ef3d95e781
+	golang.org/x/net v0.7.0
 	google.golang.org/grpc v1.38.0
 	google.golang.org/grpc/examples v0.0.0-20201106192519-9c2f82d9a79c
 )
